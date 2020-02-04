@@ -10,6 +10,7 @@ unzip /home/$USER/sbt-0.13.15.zip -d /home/$USER
 rm /home/$USER/sbt-0.13.15.zip
 
 echo 'export PATH=$PATH:/home/$USER/sbt/bin' >> /home/$USER/.bashrc
-source .bashrc 
+echo 'export TERM=xterm-color' >> /home/$USER/.bashrc
+source /home/$USER/.bashrc
 
 
