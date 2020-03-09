@@ -1,0 +1,36 @@
+[global_config]
+  enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  scroll_tabbar = True
+  title_hide_sizetext = True
+  title_inactive_bg_color = "#212733"
+  title_inactive_fg_color = "#212733"
+  title_receive_bg_color = "#212733"
+  title_receive_fg_color = "#212733"
+  title_transmit_bg_color = "#212733"
+  title_transmit_fg_color = "#212733"
+[keybindings]
+  split_horiz = <Shift><Super>o
+  split_vert = <Shift><Super>e
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#212733"
+    cursor_color = "#FFD580"
+    foreground_color = "#d9d7ce"
+    icon_bell = False
+    scrollback_infinite = True
+    show_titlebar = False
+    palette = "#212733:#ff3333:#bae67e:#ffd580:#5ccfe6:#d4bfff:#5ccfe6:#3d4752:#3e4b59:#ff3333:#bae67e:#ffd580:#5ccfe6:#d4bfff:#5ccfe6:#eeeeec"
+  [[Ayu mirage]]
+    background_color = "#212733"
+    cursor_color = "#FFD580"
+    foreground_color = "#d9d7ce"
+    palette = "#212733:#ff3333:#bae67e:#ffd580:#5ccfe6:#d4bfff:#5ccfe6:#3d4752:#3e4b59:#ff3333:#bae67e:#ffd580:#5ccfe6:#d4bfff:#5ccfe6:#eeeeec"
