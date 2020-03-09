@@ -15,6 +15,7 @@ sudo apt-get update
 sudo apt-get install arc-icons
 
 sudo apt install gnome-shell-extensions
+sudo apt remove gnome-shell-extension-ubuntu-dock
 
 
 
