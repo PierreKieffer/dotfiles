@@ -22,14 +22,6 @@
 [plugins]
 [profiles]
   [[default]]
-/* background_color = "#212733" */
-/* cursor_color = "#FFD580" */
-/* foreground_color = "#d9d7ce" */
-/* icon_bell = False */
-/* palette = "#212733:#ff3333:#bae67e:#ffd580:#5ccfe6:#d4bfff:#5ccfe6:#3d4752:#3e4b59:#ff3333:#bae67e:#ffd580:#5ccfe6:#d4bfff:#5ccfe6:#eeeeec" */
-/* scrollback_infinite = True */
-/* show_titlebar = False */
-
     background_color = "#282c34"
     cursor_color = "#a3b3cc"
     foreground_color = "#dcdfe4"
