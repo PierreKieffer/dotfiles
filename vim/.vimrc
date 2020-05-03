@@ -25,6 +25,7 @@ nmap <F3> :IndentLinesToggle <ENTER>
 
 " pluggins 
 call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
 Plug 'chrisbra/vim-commentary'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'itchyny/lightline.vim'
@@ -35,3 +36,11 @@ Plug 'tpope/vim-markdown'
 Plug 'fatih/vim-go'
 Plug 'Yggdroot/indentLine'
 call plug#end()
+
+
+" colorscheme
+colorscheme gruvbox
+
+let g:lightline = {'colorscheme': 'wombat',}
+
+
