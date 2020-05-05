@@ -19,6 +19,7 @@ nmap <F6> :NERDTreeToggle<CR>
 nmap <F5> :set number !<ENTER>
 nmap <F4> :set list!<ENTER> :hi SpecialKey ctermfg=grey guifg=grey54 <ENTER>
 nmap <F3> :IndentLinesToggle <ENTER>
+imap kj <ESC>
 
 
 " pluggins 
