@@ -37,6 +37,9 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
+" ctrlp 
+let g:ctrlp_working_path_mode = 0
+
 set termguicolors
 let ayucolor="mirage"
 colorscheme ayu
