@@ -4,13 +4,13 @@ sudo apt update \
 	&& apt install -y vim \ 
 	&& apt install -y git \
 	&& apt install -y curl \ 
-	&& apt install -y scala \
 	&& apt install -y golang-go \
 	&& apt install -y openjdk-8-jre-headless \
 	&& apt install -y  mongodb-clients
-
-# go get github.com/tkanos/gonfig
-# go get go.mongodb.org/mongo-driver/mongo
+	
+sudo apt-get remove scala-library scala
+sudo wget www.scala-lang.org/files/archive/scala-2.11.8.deb
+sudo dpkg -i scala-2.11.8.deb
 
 wget -P ~/Downloads https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
 bash ~/Downloads/Anaconda3-2019.10-Linux-x86_64.sh
