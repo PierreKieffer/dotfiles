@@ -11,6 +11,7 @@ let g:indentLine_enabled = 0
 let g:indentLine_color_term = 252
 
 " key mapping 
+nmap <F12> :q!<ENTER>
 nmap <F10> :wq!<ENTER>
 nmap <F9> :w!<ENTER>
 
