@@ -20,7 +20,18 @@ nmap <F6> :NERDTreeToggle<CR>
 nmap <F5> :set number !<ENTER>
 nmap <F4> :set list!<ENTER> :hi SpecialKey ctermfg=grey guifg=grey54 <ENTER>
 nmap <F3> :IndentLinesToggle <ENTER>
+
+" map esc key 
 imap kj <ESC>
+
+" auto closing brackets 
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 
 
 " pluggins 
@@ -47,6 +58,9 @@ colorscheme ayu
 let g:lightline = {'colorscheme': 'wombat',}
 
 
+
+
+""" other configs
 " gruvbox colorscheme settings  
 " call plug#begin('~/.vim/plugged')
 " Plug 'morhetz/gruvbox'
