@@ -28,10 +28,12 @@ imap kj <ESC>
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ( ()<left>
+inoremap (<CR> (<CR>)<ESC>O
 inoremap [ []<left>
 inoremap { {}<left>
 inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
+inoremap /*<CR> /*<CR>*/<ESC>O
 
 
 " pluggins 
@@ -51,6 +53,12 @@ call plug#end()
 
 " ctrlp 
 let g:ctrlp_working_path_mode = 0
+
+" multiple cursor
+let g:multi_cursor_exit_from_insert_mode = 1
+let g:multi_cursor_exit_from_visual_mode = 1
+let g:multi_cursor_quit_key='k'
+
 
 set termguicolors
 let ayucolor="mirage"
