@@ -21,6 +21,9 @@ nmap <F5> :set number !<ENTER>
 nmap <F4> :set list!<ENTER> :hi SpecialKey ctermfg=grey guifg=grey54 <ENTER>
 nmap <F3> :IndentLinesToggle <ENTER>
 
+" insert new line out of insert mode 
+nmap m o<ESC>k
+
 " map esc key 
 imap kj <ESC>
 
@@ -59,7 +62,7 @@ let g:multi_cursor_exit_from_insert_mode = 1
 let g:multi_cursor_exit_from_visual_mode = 1
 let g:multi_cursor_quit_key='k'
 
-
+" theme settings 
 set termguicolors
 let ayucolor="mirage"
 colorscheme ayu
