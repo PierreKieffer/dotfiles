@@ -1,12 +1,12 @@
 #!/bin/bash 
 
 sudo apt update \
-	&& apt install -y vim \ 
-	&& apt install -y git \
-	&& apt install -y zip \
-	&& apt install -y unzip \
-	&& apt install -y curl \ 
-	&& apt install -y  mongodb-clients
+	&& sudo apt install -y vim \ 
+	&& sudo apt install -y git \
+	&& sudo apt install -y zip \
+	&& sudo apt install -y unzip \
+	&& sudo apt install -y curl \ 
+	&& sudo apt install -y  mongodb-clients
 
 # java 
 sudo apt-get install -y openjdk-8-jdk
@@ -39,19 +39,31 @@ wget https://piccolo.link/sbt-1.3.7.zip
 mv sbt-1.3.7.zip /home/$USER
 unzip /home/$USER/sbt-1.3.7.zip -d /home/$USER
 rm /home/$USER/sbt-1.3.7.zip
-
 echo 'export PATH=$PATH:/home/$USER/sbt/bin' >> /home/$USER/.bashrc
 
 # python 
 wget -P ~/Downloads https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
 bash ~/Downloads/Anaconda3-2019.10-Linux-x86_64.sh
 
-# gcp + k8s 
-echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
-sudo apt-get install apt-transport-https ca-certificates gnupg \
-	&& apt-get update \
-	&& apt-get install -y google-cloud-sdk \
-	&& apt install -y kubectl
+# docker 
+sudo apt-get install -y apt-transport-https \
+	&& sudo apt-get install -y ca-certificates \
+	&& sudo apt-get install -y gnupg-agent \
+	&& sudo apt-get install -y software-properties-common
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+sudo apt-get update
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose
+sudo gpasswd -a $USER docker
+
+# k8s 
+sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
+sudo chmod +x kubectl
+sudo mv kubectl /usr/local/bin/
 
 
 
