@@ -8,3 +8,5 @@ echo 'GOPATH=$HOME/go' >> $HOME/.bashrc
 echo 'export PATH=$PATH:/usr/local/go/bin' >> $HOME/.bashrc
 
 rm go1.14.4.linux-amd64.tar.gz
+
+mkdir -p $HOME/go/src
