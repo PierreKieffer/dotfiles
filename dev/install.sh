@@ -3,6 +3,8 @@
 sudo apt update \
 	&& apt install -y vim \ 
 	&& apt install -y git \
+	&& apt install -y zip \
+	&& apt install -y unzip \
 	&& apt install -y curl \ 
 	&& apt install -y  mongodb-clients
 
@@ -31,6 +33,14 @@ echo 'GOPATH=$HOME/go' >> $HOME/.bashrc
 echo 'export PATH=$PATH:/usr/local/go/bin' >> $HOME/.bashrc
 rm go1.14.4.linux-amd64.tar.gz
 mkdir -p $HOME/go/src
+
+# sbt 
+wget https://piccolo.link/sbt-1.3.7.zip
+mv sbt-1.3.7.zip /home/$USER
+unzip /home/$USER/sbt-1.3.7.zip -d /home/$USER
+rm /home/$USER/sbt-1.3.7.zip
+
+echo 'export PATH=$PATH:/home/$USER/sbt/bin' >> /home/$USER/.bashrc
 
 # python 
 wget -P ~/Downloads https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
