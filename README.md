@@ -1,6 +1,6 @@
 # dotfiles 
 
-This is my incredible setup 
+This is my awesome setup 
 
 ```bash 
 chmod +x setup.sh 
