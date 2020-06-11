@@ -4,7 +4,6 @@ sudo apt update \
 	&& apt install -y vim \ 
 	&& apt install -y git \
 	&& apt install -y curl \ 
-	&& apt install -y golang-go \
 	&& apt install -y openjdk-8-jre-headless \
 	&& apt install -y  mongodb-clients
 	
