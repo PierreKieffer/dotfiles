@@ -8,6 +8,11 @@ sudo apt update \
 	&& sudo apt install -y curl \ 
 	&& sudo apt install -y  mongodb-clients
 
+# vim 
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+cp $PWD/vim/vimrc /home/$USER/.vimrc
+
 # java 
 sudo apt-get install -y openjdk-8-jdk
 echo 'JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64' >> $HOME/.bashrc
@@ -64,7 +69,4 @@ sudo gpasswd -a $USER docker
 sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
 sudo chmod +x kubectl
 sudo mv kubectl /usr/local/bin/
-
-
-
 
