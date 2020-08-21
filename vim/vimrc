@@ -54,6 +54,9 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
+" vim-go
+let g:go_template_use_pkg = 1
+
 " ctrlp 
 let g:ctrlp_working_path_mode = 0
 
