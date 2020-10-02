@@ -40,7 +40,7 @@ rm go1.14.4.linux-amd64.tar.gz
 mkdir -p $HOME/go/src
 
 # sbt 
-wget https://piccolo.link/sbt-1.3.7.zip
+wget https://github.com/sbt/sbt/releases/download/v1.3.7/sbt-1.3.7.zip
 mv sbt-1.3.7.zip /home/$USER
 unzip /home/$USER/sbt-1.3.7.zip -d /home/$USER
 rm /home/$USER/sbt-1.3.7.zip
