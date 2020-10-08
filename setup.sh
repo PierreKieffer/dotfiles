@@ -1,11 +1,11 @@
 #!/bin/bash 
 
 sudo apt update \
-	&& sudo apt install -y vim \ 
+	&& sudo apt install -y vim \
 	&& sudo apt install -y git \
 	&& sudo apt install -y zip \
 	&& sudo apt install -y unzip \
-	&& sudo apt install -y curl \ 
+	&& sudo apt install -y curl \
 	&& sudo apt install -y  mongodb-clients
 
 # vim 
@@ -49,6 +49,7 @@ echo 'export PATH=$PATH:/home/$USER/sbt/bin' >> /home/$USER/.bashrc
 # python 
 wget -P ~/Downloads https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
 bash ~/Downloads/Anaconda3-2019.10-Linux-x86_64.sh
+echo 'export PATH="/home/pierre/anaconda3/bin:$PATH"' >> $HOME/.bashrc
 
 # docker 
 sudo apt-get install -y apt-transport-https \
