@@ -11,7 +11,6 @@ let g:indentLine_enabled = 0
 let g:indentLine_color_term = 252
 
 " key mapping
-nmap à ^
 nmap <F12> :q!<ENTER>
 nmap <F10> :wq!<ENTER>
 nmap <F9> :w!<ENTER>
@@ -27,6 +26,9 @@ nmap m o<ESC>k
 
 " map esc key 
 imap kj <ESC>
+
+" go to the first non-blank character in a line
+nmap à ^
 
 " auto closing brackets 
 inoremap " ""<left>
