@@ -11,18 +11,24 @@ let g:indentLine_enabled = 0
 let g:indentLine_color_term = 252
 
 " key mapping
-nmap <F12> :q!<ENTER>
-nmap <F10> :wq!<ENTER>
-nmap <F9> :w!<ENTER>
+nnoremap à ^ 
 
-nmap <F7> :%!python -mjson.tool<ENTER>
-nmap <F6> :NERDTreeToggle<CR>
-nmap <F5> :set number !<ENTER>
-nmap <F4> :set list!<ENTER> :hi SpecialKey ctermfg=grey guifg=grey54 <ENTER>
-nmap <F3> :IndentLinesToggle <ENTER>
+nnoremap :s :update<cr>
+nnoremap :q :q!<cr>
+
+nnoremap <F12> :q!<cr>
+nnoremap <F10> :wq!<cr>
+nnoremap <F9> :w!<cr>
+
+nnoremap <F7> :%!python -mjson.tool<cr>
+nnoremap <F6> :NERDTreeToggle<cr>
+nnoremap <F5> :set number!<cr>
+nnoremap <F4> :set list!<cr> :hi SpecialKey ctermfg=grey guifg=grey54 <cr>
+nnoremap <F3> :IndentLinesToggle <cr>
+
 
 " insert new line out of insert mode 
-nmap m o<ESC>k
+nnoremap m o<ESC>k
 
 " map esc key 
 imap kj <ESC>
