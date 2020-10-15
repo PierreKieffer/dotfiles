@@ -8,6 +8,7 @@ sudo apt update \
 	&& sudo apt install -y curl \
 	&& sudo apt install -y wget \
 	&& sudo apt install -y make \
+	&& sudo apt install -y tig \
 	&& sudo apt install -y postgresql-client \
 	&& sudo apt install -y  mongodb-clients
 

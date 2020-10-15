@@ -1,18 +1,18 @@
+"""""""""""""""""""""
+" VIM CONFIGURATION "
+"""""""""""""""""""""
 
-" status bar settings
+
+"""""""""""""""""""""
+""status bar""
+
 set laststatus=2
 
-" special caract settings + indent lines guides for vim-go 
-set list lcs=tab:\¦\
-set list!
 
-" indent line 
-let g:indentLine_enabled = 0
-let g:indentLine_color_term = 252
+"""""""""""""""""""""
+""""key mapping""""
 
-" key mapping
-nnoremap à ^ 
-
+" save & quit 
 nnoremap :s :update<cr>
 nnoremap :q :q!<cr>
 
@@ -20,6 +20,7 @@ nnoremap <F12> :q!<cr>
 nnoremap <F10> :wq!<cr>
 nnoremap <F9> :w!<cr>
 
+" utils 
 nnoremap <F7> :%!python -mjson.tool<cr>
 nnoremap <F6> :NERDTreeToggle<cr>
 nnoremap <F5> :set number!<cr>
@@ -34,7 +35,7 @@ nnoremap m o<ESC>k
 imap kj <ESC>
 
 " go to the first non-blank character in a line
-nmap à ^
+nnoremap à ^ 
 
 " auto closing brackets 
 inoremap " ""<left>
@@ -48,7 +49,9 @@ inoremap {;<CR> {<CR>};<ESC>O
 inoremap /*<CR> /*<CR>*/<ESC>O
 
 
-" pluggins 
+"""""""""""""""""""""
+""""pluggins""""
+
 call plug#begin('~/.vim/plugged')
 Plug 'chrisbra/vim-commentary'
 Plug 'mzlogin/vim-markdown-toc'
@@ -63,6 +66,21 @@ Plug 'ayu-theme/ayu-vim'
 Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
+
+"""""""""""""""""""""
+""""special settings""""
+
+" set line numbers 
+set number
+
+" special caract settings + indent lines guides for vim-go 
+set list lcs=tab:\¦\
+set list!
+
+" indent line 
+let g:indentLine_enabled = 0
+let g:indentLine_color_term = 252
+
 " vim-go
 let g:go_template_use_pkg = 1
 
@@ -75,7 +93,10 @@ let g:multi_cursor_exit_from_visual_mode = 1
 let g:multi_cursor_select_all_word_key = '<C-a>'
 let g:multi_cursor_quit_key='<C-k>'
 
-" theme settings 
+
+"""""""""""""""""""""
+""""theme settings""""
+
 set termguicolors
 let ayucolor="mirage"
 colorscheme ayu
