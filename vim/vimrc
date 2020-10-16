@@ -19,6 +19,7 @@ nnoremap <F7> :%!python -mjson.tool<cr>
 nnoremap <F6> :NERDTreeToggle<cr>
 nnoremap :t :NERDTreeToggle<cr>
 nnoremap <F5> :set number!<cr>
+nnoremap :n :set number!<cr>
 nnoremap <F4> :set list!<cr> :hi SpecialKey ctermfg=grey guifg=grey54 <cr>
 nnoremap <F3> :IndentLinesToggle <cr>
 
