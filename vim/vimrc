@@ -58,6 +58,7 @@ Plug 'tpope/vim-markdown'
 Plug 'fatih/vim-go'
 Plug 'Yggdroot/indentLine'
 Plug 'ayu-theme/ayu-vim'
+" Plug 'joshdick/onedark.vim'
 " Plug 'drewtempelmeyer/palenight.vim'
 " Plug 'arcticicestudio/nord-vim'
 call plug#end()
@@ -70,7 +71,8 @@ call plug#end()
 set number
 
 " special caract settings + indent lines guides for vim-go 
-set list lcs=tab:\¦\
+" last caracter is a space
+set list lcs=tab:\|\ 
 set list!
 
 " indent line 
@@ -110,6 +112,13 @@ let g:lightline = {'colorscheme': 'wombat',}
 " set background=dark
 " colorscheme palenight
 " let g:lightline = { 'colorscheme': 'palenight' }
+
+" onedark
+" set termguicolors
+" syntax on
+" colorscheme onedark
+" let g:lightline = {'colorscheme': 'onedark',}
+
 
 " gruvbox
 " call plug#begin('~/.vim/plugged')
