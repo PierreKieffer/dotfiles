@@ -8,7 +8,7 @@
 
 " save & quit 
 nnoremap :s :update<cr>
-nnoremap :q :q!<cr>
+nnoremap :q :q<cr>
 
 nnoremap <F12> :q!<cr>
 nnoremap <F10> :wq!<cr>
