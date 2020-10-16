@@ -58,7 +58,8 @@ Plug 'tpope/vim-markdown'
 Plug 'fatih/vim-go'
 Plug 'Yggdroot/indentLine'
 Plug 'ayu-theme/ayu-vim'
-Plug 'arcticicestudio/nord-vim'
+" Plug 'drewtempelmeyer/palenight.vim'
+" Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 
@@ -90,7 +91,7 @@ let g:multi_cursor_quit_key='<C-k>'
 
 
 """""""""""""""""""""
-""status bar""
+""""status bar""""
 
 set laststatus=2
 
@@ -98,21 +99,25 @@ set laststatus=2
 """""""""""""""""""""
 """"theme settings""""
 
+" ayu
 set termguicolors
 let ayucolor="mirage"
 colorscheme ayu
 let g:lightline = {'colorscheme': 'wombat',}
 
+" palenight
+" set termguicolors
+" set background=dark
+" colorscheme palenight
+" let g:lightline = { 'colorscheme': 'palenight' }
 
-
-
-""" other configs
-" gruvbox colorscheme settings  
+" gruvbox
 " call plug#begin('~/.vim/plugged')
 " Plug 'morhetz/gruvbox'
 " call plug#end()
-" let g:gruvbox_contrast_dark = 
+" let g:gruvbox_contrast_dark =
 "soft"
 " set t_Co=256
 " set background=dark
 " colorscheme gruvbox
+
