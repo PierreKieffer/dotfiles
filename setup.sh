@@ -77,4 +77,9 @@ sudo curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -
 sudo chmod +x kubectl
 sudo mv kubectl /usr/local/bin/
 
+# bashrc 
+echo "alias :t='tree'" >> $HOME/.bashrc
+echo 'gp() {
+        git add . && git commit -m "$1" && git push 
+}' >> $HOME/.bashrc
 
