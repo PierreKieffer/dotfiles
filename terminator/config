@@ -20,6 +20,7 @@
       parent = ""
       type = Window
       size = 840, 960
+      position = 200:50
 [plugins]
 [profiles]
   [[default]]
