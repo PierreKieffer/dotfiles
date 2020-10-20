@@ -92,6 +92,10 @@ let g:multi_cursor_exit_from_visual_mode = 1
 let g:multi_cursor_select_all_word_key = '<C-a>'
 let g:multi_cursor_quit_key='<C-k>'
 
+"""""""""""""""""""""
+""""file init""""
+" bash
+autocmd BufNewFile *.sh 0put =\"#!/bin/bash\<nl>\"|$
 
 """""""""""""""""""""
 """"status bar""""
