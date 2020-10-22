@@ -68,6 +68,9 @@ call plug#end()
 """""""""""""""""""""
 """"special settings""""
 
+" cmd line height
+" set cmdheight=1
+
 " set line numbers 
 set number
 
