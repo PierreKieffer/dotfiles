@@ -79,7 +79,7 @@ sudo mv kubectl /usr/local/bin/
 
 # bashrc 
 echo "alias :t='tree'" >> $HOME/.bashrc
-echo "alias vimt='vim -c NERDTreeToggle'"
+echo "alias vimt='vim -c NERDTreeToggle'" >> $HOME/.bashrc
 echo 'gp() {
         git add . && git commit -m "$1" && git push 
 }' >> $HOME/.bashrc
