@@ -101,8 +101,15 @@ let g:multi_cursor_quit_key='<C-k>'
 " bash
 " autocmd BufNewFile *.sh 0put =\"#!/bin/bash\<nl>\"|$
 autocmd BufNewFile *.sh 0r ~/.vim/templates/template.sh | :2
+function BashTemp()
+   :read ~/.vim/templates/template.sh
+endfunction
+
 " python
 autocmd BufNewFile *.py 0r ~/.vim/templates/template.py
+function PyTemp()
+   :read ~/.vim/templates/template.py
+endfunction
 
 
 """""""""""""""""""""
