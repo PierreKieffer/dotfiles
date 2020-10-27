@@ -5,3 +5,6 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 
 # copy .vimrc file to home dir 
 cp $PWD/vimrc /home/$USER/.vimrc 
+
+# copy templates 
+cp -r $PWD/templates /home/$USER/.vim/ 

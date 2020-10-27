@@ -99,7 +99,11 @@ let g:multi_cursor_quit_key='<C-k>'
 """""""""""""""""""""
 """"file init""""
 " bash
-autocmd BufNewFile *.sh 0put =\"#!/bin/bash\<nl>\"|$
+" autocmd BufNewFile *.sh 0put =\"#!/bin/bash\<nl>\"|$
+autocmd BufNewFile *.sh 0r ~/.vim/templates/template.sh | :2
+" python
+autocmd BufNewFile *.py 0r ~/.vim/templates/template.py
+
 
 """""""""""""""""""""
 """"status bar""""

@@ -18,6 +18,7 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 
 cp $PWD/vim/vimrc /home/$USER/.vimrc
 vim +'PlugInstall --sync' +qa
+cp -r $PWD/vim/templates /home/$USER/.vim/
 
 # java 
 sudo apt-get install -y openjdk-8-jdk
