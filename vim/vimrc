@@ -1,4 +1,4 @@
-"""""""""""""""""""""
+""""""""""""""""""""" map cr to open in vertical split
 " VIM CONFIGURATION "
 """""""""""""""""""""
 
@@ -89,6 +89,11 @@ let g:go_template_use_pkg = 1
 
 " ctrlp 
 let g:ctrlp_working_path_mode = 0
+" map cr to open in vertical split
+let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<c-v>', '<2-LeftMouse>'],
+    \ 'AcceptSelection("v")': ['<cr>', '<RightMouse>'],
+    \ }
 
 " multiple cursor
 let g:multi_cursor_exit_from_insert_mode = 1
