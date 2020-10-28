@@ -11,7 +11,8 @@ sudo apt update \
 	&& sudo apt install -y tig \
 	&& sudo apt install -y tree \
 	&& sudo apt install -y postgresql-client \
-	&& sudo apt install -y  mongodb-clients
+	&& sudo apt install -y  mongodb-clients \
+# && sudo apt install -y software-properties-common
 
 # vim 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -54,9 +55,14 @@ rm /home/$USER/sbt-1.3.7.zip
 echo 'export PATH=$PATH:/home/$USER/sbt/bin' >> /home/$USER/.bashrc
 
 # python 
-wget -P ~/Downloads https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
-bash ~/Downloads/Anaconda3-2019.10-Linux-x86_64.sh
-echo 'export PATH="/home/pierre/anaconda3/bin:$PATH"' >> $HOME/.bashrc
+# wget -P ~/Downloads https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
+# bash ~/Downloads/Anaconda3-2019.10-Linux-x86_64.sh
+# echo 'export PATH="/home/pierre/anaconda3/bin:$PATH"' >> $HOME/.bashrc
+sudo apt install -y python3-pip
+sudo apt install -y python3-venv
+echo "alias pip='pip3'" >> $HOME/.bashrc
+echo "alias python='python3'" >> $HOME/.bashrc
+
 
 # docker 
 sudo apt-get install -y apt-transport-https \
