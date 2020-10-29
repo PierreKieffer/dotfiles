@@ -131,6 +131,7 @@ set termguicolors
 let ayucolor="mirage"
 colorscheme ayu
 let g:lightline = {'colorscheme': 'wombat',}
+" set fillchars+=vert:\▏
 
 " palenight
 " set termguicolors
