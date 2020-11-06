@@ -137,7 +137,7 @@ set cursorline
 
 " onehalf
 " set termguicolors
-set cursorline
+" set cursorline
 " colorscheme onehalflight
 " colorscheme onehalfdark
 " let g:lightline = { 'colorscheme': 'onehalfdark' }
