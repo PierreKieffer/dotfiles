@@ -60,6 +60,7 @@ Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go'
 Plug 'Yggdroot/indentLine'
 Plug 'ayu-theme/ayu-vim'
+" Plug 'sonph/onehalf', { 'rtp': 'vim' }
 " Plug 'joshdick/onedark.vim'
 " Plug 'drewtempelmeyer/palenight.vim'
 " Plug 'arcticicestudio/nord-vim'
@@ -131,7 +132,16 @@ set termguicolors
 let ayucolor="mirage"
 colorscheme ayu
 let g:lightline = {'colorscheme': 'wombat',}
+set cursorline
 " set fillchars+=vert:\▏
+
+" onehalf
+" set termguicolors
+set cursorline
+" colorscheme onehalflight
+" colorscheme onehalfdark
+" let g:lightline = { 'colorscheme': 'onehalfdark' }
+
 
 " palenight
 " set termguicolors
