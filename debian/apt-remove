@@ -1,0 +1,15 @@
+#!/bin/bash
+PACKAGE=$1
+
+if [ -z "$PACKAGE" ]; then                                                                                                                                                                                                                        
+        echo "Missing arguments"
+        echo "Usage ./apt-remove package_name"
+        exit 1
+fi
+
+sudo apt-get remove $PACKAGE
+sudo apt-get remove --auto-remove $PACKAGE
+sudo apt-get purge $PACKAGE
+sudo apt-get purge --auto-remove $PACKAGE
+
+
