@@ -136,7 +136,8 @@ set laststatus=2
 set termguicolors
 let ayucolor="mirage"
 colorscheme ayu
-let g:lightline = {'colorscheme': 'wombat',}
+" let g:lightline = {'colorscheme': 'wombat',}
+let g:lightline = {'colorscheme': 'ayu',}
 set cursorline
 " set fillchars+=vert:\▏
 
