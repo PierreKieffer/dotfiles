@@ -8,3 +8,6 @@ cp $PWD/vimrc /home/$USER/.vimrc
 
 # copy templates 
 cp -r $PWD/templates /home/$USER/.vim/ 
+
+# install plugins
+vim +'PlugInstall --sync' +qa

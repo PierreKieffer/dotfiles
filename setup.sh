@@ -18,8 +18,8 @@ sudo apt update \
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 cp $PWD/vim/vimrc /home/$USER/.vimrc
-vim +'PlugInstall --sync' +qa
 cp -r $PWD/vim/templates /home/$USER/.vim/
+vim +'PlugInstall --sync' +qa
 
 # java 
 sudo apt-get install -y openjdk-8-jdk
