@@ -118,6 +118,7 @@ function PyTemp()
 endfunction
 " flask template
 function FlaskTemp()
+   :1,$d
    :read ~/.vim/templates/flask_template.py
 endfunction
 
