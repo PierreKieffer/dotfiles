@@ -1,0 +1,54 @@
+#!/usr/bin/env python3
+import flask 
+from flask import Flask, request
+import json 
+import os
+
+os.environ["FLASK_APP"]="app"
+os.environ["FLASK_ENV"]="dev"
+
+app = Flask(__name__)
+
+def check_auth(auth_header, token): 
+    if (auth_header == "Bearer {}".format(token)): 
+        return True
+    else :
+        return False
+
+@app.route("/get", methods=["GET"])
+def get_handler(): 
+    check_token = check_auth(request.headers.get("Authorization"), "secret")
+
+    if check_token : 
+
+        url_param = request.args.get("param", None)
+
+        response_payload = json.dumps({})
+        response = flask.Response(response_payload, status=200)
+        response.headers["Content-Type"] = "application/json"
+
+        return response
+    else : 
+        response = flask.Response(status=401)
+        return response
+
+@app.route("/post", methods=["POST"])
+def post_handler(): 
+    check_token = check_auth(request.headers.get("Authorization"), "secret")
+
+    if check_token : 
+
+        post_payload = request.get_json()
+
+        response_payload = json.dumps({})
+        response = flask.Response(response_payload, status=200)
+        response.headers["Content-Type"] = "application/json"
+
+        return response
+    else : 
+        response = flask.Response(status=401)
+        return response
+
+if __name__=="__main__":
+    app.run(host="0.0.0.0", port=8080, threaded=True)
+
