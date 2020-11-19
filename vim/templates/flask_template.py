@@ -28,7 +28,7 @@ def get_handler():
     if check_token : 
 
         '''
-        Get url params
+        Get url query string params
         '''
         url_param = request.args.get("param", None)
 
