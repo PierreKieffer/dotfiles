@@ -116,12 +116,17 @@ autocmd BufNewFile *.py 0r ~/.vim/templates/template.py | :2
 function PyTemp()
    :read ~/.vim/templates/template.py
 endfunction
+
 " flask template
 function FlaskTemp()
    :1,$d
    :read ~/.vim/templates/flask_template.py
 endfunction
 
+" clean 
+function Clean()
+   :1,$d
+endfunction
 
 """""""""""""""""""""
 """"status bar""""
