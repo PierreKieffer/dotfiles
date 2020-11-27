@@ -123,6 +123,12 @@ function FlaskTemp()
    :read ~/.vim/templates/flask_template.py
 endfunction
 
+" fastapi template
+function FastAPITemp()
+   :1,$d
+   :read ~/.vim/templates/fastapi_template.py
+endfunction
+
 " clean 
 function Clear()
    :1,$d
