@@ -18,7 +18,7 @@ def check_auth(authorization_header):
 # - Handle a GET request -
 # ---------------------------------------------------------------------------
 @app.get("/get")
-def get_handler(response : Response, request : Request, arg = None ): 
+def get_handler(request : Request, response : Response, arg = None ): 
     authorization_token = request.headers.get("Authorization", None)
     check_token = check_auth(authorization_token) 
     if check_token : 
@@ -48,7 +48,7 @@ class PredictPayload(BaseModel):
     value : int
 
 @app.post("/post")
-def post_handler(response : Response, request : Request, payload : PredictPayload): 
+def post_handler(request : Request, response : Response, payload : PredictPayload): 
     authorization_token = request.headers.get("Authorization", None)
     check_token = check_auth(authorization_token) 
     if check_token : 
