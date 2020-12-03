@@ -42,7 +42,6 @@ def get_handler(request : Request, response : Response, arg = None ):
 # ---------------------------------------------------------------------------
 # - Handle a POST request -
 # ---------------------------------------------------------------------------
-
 class PredictPayload(BaseModel): 
     key : str
     value : int
