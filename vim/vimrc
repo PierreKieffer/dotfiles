@@ -20,6 +20,7 @@ nnoremap <F6> :NERDTreeToggle<cr>
 nnoremap :t :NERDTreeToggle<cr>
 nnoremap <F5> :set number!<cr>
 nnoremap :n :set number!<cr>
+nnoremap :v :sp<cr>
 nnoremap <F4> :set list!<cr> :hi SpecialKey ctermfg=grey guifg=grey54 <cr>
 nnoremap <F3> :IndentLinesToggle <cr>
 
