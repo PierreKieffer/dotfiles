@@ -1,6 +1,10 @@
+
 [global_config]
+  dbus = False
   enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  inactive_color_offset = 0.802469135802
   scroll_tabbar = True
+  title_font = Sans 6
   title_hide_sizetext = True
   title_inactive_bg_color = "#282c34"
   title_inactive_fg_color = "#212733"
@@ -17,17 +21,20 @@
   [[default]]
     [[[child1]]]
       parent = window0
+      profile = default
       type = Terminal
     [[[window0]]]
       parent = ""
-      type = Window
-      size = 840, 960
       position = 200:50
+      size = 840, 960
+      type = Window
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#282c34"
+    allow_bold = False
+    background_color = "#1d2026"
     cursor_color = "#a3b3cc"
+    font = Sans 10
     foreground_color = "#dcdfe4"
     icon_bell = False
     palette = "#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#dcdfe4:#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#dcdfe4"
