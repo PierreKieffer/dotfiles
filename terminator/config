@@ -1,4 +1,3 @@
-
 [global_config]
   dbus = False
   enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
@@ -32,12 +31,12 @@
 [profiles]
   [[default]]
     allow_bold = False
-    background_color = "#1d2026"
-    cursor_color = "#a3b3cc"
+    background_color = "#1d1f21"
+    cursor_color = "#c5c8c6"
     font = Sans 10
-    foreground_color = "#dcdfe4"
+    foreground_color = "#c5c8c6"
     icon_bell = False
-    palette = "#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#dcdfe4:#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#dcdfe4"
+    palette = "#000000:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff:#000000:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff"
     scrollback_infinite = True
     show_titlebar = False
   [[OneHalfLight]]
@@ -47,5 +46,25 @@
     foreground_color = "#383a42"
     icon_bell = False
     palette = "#383a42:#e45649:#50a14f:#c18401:#0184bc:#a626a4:#0997b3:#fafafa:#4f525e:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#ffffff"
+    scrollback_infinite = True
+    show_titlebar = False
+  [[Tomorrow Night]]
+    allow_bold = False
+    background_color = "#1d1f21"
+    cursor_color = "#c5c8c6"
+    font = Sans 10
+    foreground_color = "#c5c8c6"
+    icon_bell = False
+    palette = "#000000:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff:#000000:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff"
+    scrollback_infinite = True
+    show_titlebar = False
+  [[Custom]]
+    allow_bold = False
+    background_color = "#1d2026"
+    cursor_color = "#a3b3cc"
+    font = Sans 10
+    foreground_color = "#dcdfe4"
+    icon_bell = False
+    palette = "#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#dcdfe4:#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#dcdfe4"
     scrollback_infinite = True
     show_titlebar = False

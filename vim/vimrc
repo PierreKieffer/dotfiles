@@ -61,10 +61,7 @@ Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go'
 Plug 'Yggdroot/indentLine'
 Plug 'ayu-theme/ayu-vim'
-" Plug 'sonph/onehalf', { 'rtp': 'vim' }
-" Plug 'joshdick/onedark.vim'
-" Plug 'drewtempelmeyer/palenight.vim'
-" Plug 'arcticicestudio/nord-vim'
+Plug 'chriskempson/base16-vim'
 call plug#end()
 
 
@@ -144,13 +141,20 @@ set laststatus=2
 """""""""""""""""""""
 """"theme settings""""
 
-" ayu
+" base16 custom
 set termguicolors
-let ayucolor="mirage"
-colorscheme ayu
-" let g:lightline = {'colorscheme': 'wombat',}
-let g:lightline = {'colorscheme': 'ayu',}
+" colorscheme base16-materia
+colorscheme base16-tomorrow-night
 set cursorline
+let g:lightline = {'colorscheme': 'Tomorrow_Night',}
+
+" ayu
+" set termguicolors
+" let ayucolor="mirage"
+" colorscheme ayu
+" let g:lightline = {'colorscheme': 'wombat',}
+" let g:lightline = {'colorscheme': 'ayu',}
+" set cursorline
 " set fillchars+=vert:\▏
 
 " onehalf
@@ -159,28 +163,3 @@ set cursorline
 " colorscheme onehalflight
 " colorscheme onehalfdark
 " let g:lightline = { 'colorscheme': 'onehalfdark' }
-
-
-" palenight
-" set termguicolors
-" set background=dark
-" colorscheme palenight
-" let g:lightline = { 'colorscheme': 'palenight' }
-
-" onedark
-" set termguicolors
-" syntax on
-" colorscheme onedark
-" let g:lightline = {'colorscheme': 'onedark',}
-
-
-" gruvbox
-" call plug#begin('~/.vim/plugged')
-" Plug 'morhetz/gruvbox'
-" call plug#end()
-" let g:gruvbox_contrast_dark =
-"soft"
-" set t_Co=256
-" set background=dark
-" colorscheme gruvbox
-
