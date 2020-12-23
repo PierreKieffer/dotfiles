@@ -94,6 +94,7 @@ let g:go_template_use_pkg = 1
 
 " ctrlp 
 let g:ctrlp_working_path_mode = 0
+let g:ctrlp_use_caching = 0
 " map cr to open in vertical split
 " let g:ctrlp_prompt_mappings = {
 "    \ 'AcceptSelection("e")': ['<c-v>', '<2-LeftMouse>'],
