@@ -55,6 +55,8 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 inoremap /*<CR> /*<CR>*/<ESC>O
 
+" disable recording
+map q <Nop>
 
 """""""""""""""""""""
 """"pluggins""""
