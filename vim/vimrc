@@ -1,23 +1,23 @@
-""""""""""""""""""""" 
-" VIM CONFIGURATION "
-"""""""""""""""""""""
+" -----------------------------------------
+" |           VIM CONFIGURATION           |
+" -----------------------------------------
 
-"""""""""""""""""""""""""
-""""std configuration""""
-
+" -----------------------------------------
+" - std configuration -
+" -----------------------------------------
 syntax on
+set laststatus=2
 set smartindent
 set incsearch
 
-"""""""""""""""""""""
-""""key mapping""""
-
+" -----------------------------------------
+" - key mapping -
+" -----------------------------------------
 " save & quit 
 let mapleader = " "
 nnoremap :s :update<cr>
 nnoremap :q :q<cr>
 nnoremap <leader>qq :q!<cr>
-
 
 " utils 
 nnoremap :t :NERDTreeToggle<cr>
@@ -27,8 +27,6 @@ nnoremap <leader>v :vsp<cr>
 nnoremap <leader>w :wincmd w<cr>
 nnoremap <leader>t :tabnew<cr>
 
-" nnoremap <F4> :set list!<cr> :hi SpecialKey ctermfg=grey guifg=grey54 <cr>
-" nnoremap <F3> :IndentLinesToggle <cr>
 nnoremap <F7> :%!python -mjson.tool<cr>
 
 " insert new line out of insert mode 
@@ -54,9 +52,9 @@ inoremap /*<CR> /*<CR>*/<ESC>O
 " disable recording
 map q <Nop>
 
-"""""""""""""""""""""
-""""pluggins""""
-
+" -----------------------------------------
+" - pluggins -
+" -----------------------------------------
 call plug#begin('~/.vim/plugged')
 Plug 'chrisbra/vim-commentary'
 Plug 'mzlogin/vim-markdown-toc'
@@ -67,29 +65,15 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go'
-" Plug 'Yggdroot/indentLine'
-" Plug 'ayu-theme/ayu-vim'
+Plug 'ayu-theme/ayu-vim'
 Plug 'chriskempson/base16-vim'
 call plug#end()
 
-
-"""""""""""""""""""""
-""""special settings""""
-
-" cmd line height
-" set cmdheight=1
-
+" -----------------------------------------
+" - special settings -
+" -----------------------------------------
 " set line numbers 
 set number
-
-" special caract settings + indent lines guides for vim-go 
-" last caracter is a space
-" set list lcs=tab:\|\
-" set list!
-
-" indent line 
-let g:indentLine_enabled = 0
-let g:indentLine_color_term = 252
 
 " vim-go
 let g:go_template_use_pkg = 1
@@ -97,11 +81,6 @@ let g:go_template_use_pkg = 1
 " ctrlp 
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_use_caching = 0
-" map cr to open in vertical split
-" let g:ctrlp_prompt_mappings = {
-"    \ 'AcceptSelection("e")': ['<c-v>', '<2-LeftMouse>'],
-"    \ 'AcceptSelection("v")': ['<cr>', '<RightMouse>'],
-"    \ }
 
 " multiple cursor
 let g:multi_cursor_exit_from_insert_mode = 1
@@ -109,10 +88,10 @@ let g:multi_cursor_exit_from_visual_mode = 1
 let g:multi_cursor_select_all_word_key = '<C-a>'
 let g:multi_cursor_quit_key='<C-k>'
 
-"""""""""""""""""""""
-""""file init""""
+" -----------------------------------------
+" - file init -
+" -----------------------------------------
 " bash
-" autocmd BufNewFile *.sh 0put =\"#!/bin/bash\<nl>\"|$
 autocmd BufNewFile *.sh 0r ~/.vim/templates/template.sh | :2
 function BashTemp()
    :read ~/.vim/templates/template.sh
@@ -141,18 +120,12 @@ function Clear()
    :1,$d
 endfunction
 
-"""""""""""""""""""""
-""""status bar""""
-
-set laststatus=2
-
-
-"""""""""""""""""""""
-""""theme settings""""
-
-" base16 custom
+" -----------------------------------------
+" - theme -
+" -----------------------------------------
+" custom
 set termguicolors
-" colorscheme base16-materia
+colorscheme base16-materia
 colorscheme base16-tomorrow-night
 set cursorline
 let g:lightline = {'colorscheme': 'Tomorrow_Night',}
@@ -161,14 +134,6 @@ let g:lightline = {'colorscheme': 'Tomorrow_Night',}
 " set termguicolors
 " let ayucolor="mirage"
 " colorscheme ayu
-" let g:lightline = {'colorscheme': 'wombat',}
 " let g:lightline = {'colorscheme': 'ayu',}
 " set cursorline
-" set fillchars+=vert:\▏
 
-" onehalf
-" set termguicolors
-" set cursorline
-" colorscheme onehalflight
-" colorscheme onehalfdark
-" let g:lightline = { 'colorscheme': 'onehalfdark' }
