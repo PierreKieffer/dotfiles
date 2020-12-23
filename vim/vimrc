@@ -13,6 +13,7 @@ set incsearch
 """"key mapping""""
 
 " save & quit 
+let mapleader = " "
 nnoremap :s :update<cr>
 nnoremap :q :q<cr>
 
@@ -21,15 +22,18 @@ nnoremap <F10> :wq!<cr>
 nnoremap <F9> :w!<cr>
 
 " utils 
-nnoremap <F7> :%!python -mjson.tool<cr>
-nnoremap <F6> :NERDTreeToggle<cr>
 nnoremap :t :NERDTreeToggle<cr>
-nnoremap <F5> :set number!<cr>
-nnoremap :n :set number!<cr>
-nnoremap :v :sp<cr>
+nnoremap <leader>n :set number!<cr>
+nnoremap <leader>h :sp<cr>
+nnoremap <leader>v :vsp<cr>
+nnoremap <leader>w :wincmd w<cr>
+nnoremap <leader>t :tabnew<cr>
+
 nnoremap <F4> :set list!<cr> :hi SpecialKey ctermfg=grey guifg=grey54 <cr>
 nnoremap <F3> :IndentLinesToggle <cr>
-
+nnoremap <F7> :%!python -mjson.tool<cr>
+nnoremap <F6> :NERDTreeToggle<cr>
+nnoremap <F5> :set number!<cr>
 
 " insert new line out of insert mode 
 nnoremap m o<ESC>k
