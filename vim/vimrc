@@ -16,10 +16,8 @@ set incsearch
 let mapleader = " "
 nnoremap :s :update<cr>
 nnoremap :q :q<cr>
+nnoremap <leader>qq :q!<cr>
 
-nnoremap <F12> :q!<cr>
-nnoremap <F10> :wq!<cr>
-nnoremap <F9> :w!<cr>
 
 " utils 
 nnoremap :t :NERDTreeToggle<cr>
@@ -29,11 +27,9 @@ nnoremap <leader>v :vsp<cr>
 nnoremap <leader>w :wincmd w<cr>
 nnoremap <leader>t :tabnew<cr>
 
-nnoremap <F4> :set list!<cr> :hi SpecialKey ctermfg=grey guifg=grey54 <cr>
-nnoremap <F3> :IndentLinesToggle <cr>
+" nnoremap <F4> :set list!<cr> :hi SpecialKey ctermfg=grey guifg=grey54 <cr>
+" nnoremap <F3> :IndentLinesToggle <cr>
 nnoremap <F7> :%!python -mjson.tool<cr>
-nnoremap <F6> :NERDTreeToggle<cr>
-nnoremap <F5> :set number!<cr>
 
 " insert new line out of insert mode 
 nnoremap m o<ESC>k
@@ -71,8 +67,8 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go'
-Plug 'Yggdroot/indentLine'
-Plug 'ayu-theme/ayu-vim'
+" Plug 'Yggdroot/indentLine'
+" Plug 'ayu-theme/ayu-vim'
 Plug 'chriskempson/base16-vim'
 call plug#end()
 
@@ -88,8 +84,8 @@ set number
 
 " special caract settings + indent lines guides for vim-go 
 " last caracter is a space
-set list lcs=tab:\|\ 
-set list!
+" set list lcs=tab:\|\
+" set list!
 
 " indent line 
 let g:indentLine_enabled = 0
