@@ -14,12 +14,6 @@ sudo apt update \
 	&& sudo apt install -y  mongodb-clients \
 # && sudo apt install -y software-properties-common
 
-# vim 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-cp $PWD/vim/vimrc /home/$USER/.vimrc
-cp -r $PWD/vim/templates /home/$USER/.vim/
-vim +'PlugInstall --sync' +qa
 
 # java 
 sudo apt-get install -y openjdk-8-jdk
