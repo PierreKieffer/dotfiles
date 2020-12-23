@@ -2,6 +2,12 @@
 " VIM CONFIGURATION "
 """""""""""""""""""""
 
+"""""""""""""""""""""""""
+""""std configuration""""
+
+syntax on
+set smartindent
+set incsearch
 
 """""""""""""""""""""
 """"key mapping""""
