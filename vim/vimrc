@@ -9,6 +9,7 @@ syntax on
 set laststatus=2
 set smartindent
 set incsearch
+set scrolloff=8
 
 " -----------------------------------------
 " - key mapping -
