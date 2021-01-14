@@ -10,6 +10,7 @@ set laststatus=2
 set smartindent
 set incsearch
 set scrolloff=8
+set splitbelow splitright
 
 " -----------------------------------------
 " - key mapping -
