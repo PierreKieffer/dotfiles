@@ -17,4 +17,4 @@ cp -r $PWD/templates /home/$USER/.vim/
 vim +'PlugInstall --sync' +qa
 
 # copy color scheme 
-cp base16-vim/colors/base-16-tomorrow-night.vim /home/$USER/.vim/plugged/base16-vim/colors
+cp base16-vim/colors/base16-tomorrow-night.vim /home/$USER/.vim/plugged/base16-vim/colors
