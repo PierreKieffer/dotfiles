@@ -11,6 +11,7 @@
   title_receive_fg_color = "#212733"
   title_transmit_bg_color = "#282c34"
   title_transmit_fg_color = "#212733"
+  borderless = True
 [keybindings]
   new_tab = <Alt>t
   next_tab = <Alt>n
@@ -24,8 +25,9 @@
       type = Terminal
     [[[window0]]]
       parent = ""
-      position = 200:50
-      size = 840, 960
+      position = 240:50
+      size = 1400, 960
+/* size = 840, 960 */
       type = Window
 [plugins]
 [profiles]
@@ -37,6 +39,16 @@
     foreground_color = "#c5c8c6"
     icon_bell = False
     palette = "#000000:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff:#000000:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff"
+    scrollback_infinite = True
+    show_titlebar = False
+  [[Custom]]
+    allow_bold = False
+    background_color = "#1d2026"
+    cursor_color = "#a3b3cc"
+    font = Sans 10
+    foreground_color = "#dcdfe4"
+    icon_bell = False
+    palette = "#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#dcdfe4:#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#dcdfe4"
     scrollback_infinite = True
     show_titlebar = False
   [[OneHalfLight]]
@@ -56,15 +68,5 @@
     foreground_color = "#c5c8c6"
     icon_bell = False
     palette = "#000000:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff:#000000:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff"
-    scrollback_infinite = True
-    show_titlebar = False
-  [[Custom]]
-    allow_bold = False
-    background_color = "#1d2026"
-    cursor_color = "#a3b3cc"
-    font = Sans 10
-    foreground_color = "#dcdfe4"
-    icon_bell = False
-    palette = "#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#dcdfe4:#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#dcdfe4"
     scrollback_infinite = True
     show_titlebar = False
