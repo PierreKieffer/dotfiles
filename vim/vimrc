@@ -127,7 +127,7 @@ endfunction
 " -----------------------------------------
 " custom
 set termguicolors
-colorscheme base16-materia
+" colorscheme base16-materia
 colorscheme base16-tomorrow-night
 set cursorline
 let g:lightline = {'colorscheme': 'Tomorrow_Night',}
