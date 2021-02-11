@@ -15,8 +15,10 @@ set splitbelow splitright
 " -----------------------------------------
 " - key mapping -
 " -----------------------------------------
-" save & quit 
+" leader
 let mapleader = " "
+
+" save & quit 
 nnoremap :s :update<cr>
 nnoremap :q :q<cr>
 nnoremap <leader>qq :q!<cr>
@@ -67,7 +69,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go'
-Plug 'ayu-theme/ayu-vim'
+" Plug 'ayu-theme/ayu-vim'
 Plug 'chriskempson/base16-vim'
 call plug#end()
 
