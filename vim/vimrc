@@ -24,14 +24,14 @@ nnoremap :q :q<cr>
 nnoremap <leader>qq :q!<cr>
 
 " utils 
+nnoremap <leader>b :bn<cr>
+nnoremap <leader>l :ls<cr>
 nnoremap :t :NERDTreeToggle<cr>
 nnoremap <leader>n :set number!<cr>
 nnoremap <leader>h :sp<cr>
 nnoremap <leader>v :vsp<cr>
 nnoremap <leader>w :wincmd w<cr>
 nnoremap <leader>t :tabnew<cr>
-nnoremap <leader>b :bn<cr>
-nnoremap <leader>l :ls<cr>
 
 nnoremap <F7> :%!python -mjson.tool<cr>
 
