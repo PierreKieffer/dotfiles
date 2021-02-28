@@ -133,10 +133,14 @@ endfunction
 " -----------------------------------------
 " custom
 set termguicolors
+set background=dark
+set t_Co=256
 " colorscheme base16-materia
 colorscheme base16-tomorrow-night
+" colorscheme base16-gruvbox-light-soft
 set cursorline
 let g:lightline = {'colorscheme': 'Tomorrow_Night',}
+" let g:lightline = {'colorscheme': 'gruvbox',}
 
 " ayu
 " set termguicolors

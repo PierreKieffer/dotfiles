@@ -31,33 +31,13 @@
       type = Window
 [plugins]
 [profiles]
-  [[Custom]]
-    allow_bold = False
-    background_color = "#1d2026"
-    cursor_color = "#a3b3cc"
-    font = Sans 10
-    foreground_color = "#dcdfe4"
-    icon_bell = False
-    palette = "#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#dcdfe4:#282c34:#e06c75:#98c379:#e5c07b:#61afef:#c678dd:#56b6c2:#dcdfe4"
-    scrollback_infinite = True
-    show_titlebar = False
-  [[Tomorrow Night]]
-    allow_bold = False
-    background_color = "#1d1f21"
-    cursor_color = "#c5c8c6"
-    font = Sans 10
-    foreground_color = "#c5c8c6"
-    icon_bell = False
-    palette = "#000000:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff:#000000:#cc6666:#b5bd68:#f0c674:#81a2be:#b294bb:#8abeb7:#ffffff"
-    scrollback_infinite = True
-    show_titlebar = False
   [[default]]
     allow_bold = False
-    background_color = "#fbf1c7"
-    cursor_color = "#c5c8c6"
+    background_color = "#f2e5bc"
+    cursor_color = "#282828"
     font = Sans 10
-    foreground_color = "#3c3836"
+    foreground_color = "#282828"
     icon_bell = False
-    palette = "#fbf1c7:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#7c6f64:#928374:#9d0006:#79740e:#b57614:#076678:#8f3f71:#427b58:#3c3836"
+    palette = "#f2e5bc:#9d0006:#79740e:#b57614:#076678:#8f3f71:#427b58:#504945:#bdae93:#9d0006:#79740e:#b57614:#076678:#8f3f71:#427b58:#282828"
     scrollback_infinite = True
     show_titlebar = False
