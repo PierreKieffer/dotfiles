@@ -371,10 +371,10 @@ call <sid>hi("phpParent",          s:gui05, "", s:cterm05, "", "", "")
 call <sid>hi("phpMethodsVar",      s:gui0C, "", s:cterm0C, "", "", "")
 
 " Python highlighting
-" call <sid>hi("pythonOperator",  s:gui0E, "", s:cterm0E, "", "", "")
-" call <sid>hi("pythonRepeat",    s:gui0E, "", s:cterm0E, "", "", "")
-" call <sid>hi("pythonInclude",   s:gui0E, "", s:cterm0E, "", "", "")
-" call <sid>hi("pythonStatement", s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("pythonOperator",  s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("pythonRepeat",    s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("pythonInclude",   s:gui0E, "", s:cterm0E, "", "", "")
+call <sid>hi("pythonStatement", s:gui0E, "", s:cterm0E, "", "", "")
 
 " Ruby highlighting
 call <sid>hi("rubyAttribute",               s:gui0D, "", s:cterm0D, "", "", "")
