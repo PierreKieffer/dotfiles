@@ -111,6 +111,9 @@ function PyTemp()
    :read ~/.vim/templates/template.py
 endfunction
 
+" json
+autocmd BufRead,BufNewFile *.json set cursorline!
+
 " flask template
 function FlaskTemp()
    :1,$d
@@ -135,11 +138,15 @@ endfunction
 set termguicolors
 set background=dark
 set t_Co=256
-" colorscheme base16-materia
-colorscheme base16-tomorrow-night
-" colorscheme base16-gruvbox-light-soft
 set cursorline
-let g:lightline = {'colorscheme': 'Tomorrow_Night',}
+
+" colorscheme base16-tomorrow-night
+" let g:lightline = {'colorscheme': 'Tomorrow_Night',}
+
+colorscheme  base16-black-metal-bathory
+let g:lightline = {'colorscheme': 'blackmetal',}
+
+" colorscheme base16-gruvbox-light-soft
 " let g:lightline = {'colorscheme': 'gruvbox',}
 
 " ayu
