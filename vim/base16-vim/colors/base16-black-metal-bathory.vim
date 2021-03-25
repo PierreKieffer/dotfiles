@@ -38,16 +38,25 @@ let g:base16_gui09 = "aaaaaa"
 
 let s:gui0A        = "e78a53"
 let g:base16_gui0A = "e78a53"
-let s:gui0B        = "fbcb97"
-let g:base16_gui0B = "fbcb97"
-" let s:gui0B        = "eecc6c"
-" let g:base16_gui0B = "eecc6c"
+
+" let s:gui0B        = "fbcb97"
+" let g:base16_gui0B = "fbcb97"
+let s:gui0B        = "888888"
+let g:base16_gui0B = "888888"
+
 let s:gui0C        = "aaaaaa"
 let g:base16_gui0C = "aaaaaa"
-let s:gui0D        = "888888"
-let g:base16_gui0D = "888888"
-let s:gui0E        = "999999"
-let g:base16_gui0E = "999999"
+
+" let s:gui0D        = "888888"
+" let g:base16_gui0D = "888888"
+" let s:gui0E        = "999999"
+" let g:base16_gui0E = "999999"
+
+let s:gui0D        = "fbcb97"
+let g:base16_gui0D = "fbcb97"
+let s:gui0E        = "5f8787"
+let g:base16_gui0E = "5f8787"
+
 let s:gui0F        = "444444"
 let g:base16_gui0F = "444444"
 
