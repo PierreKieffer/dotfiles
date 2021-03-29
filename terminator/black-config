@@ -37,6 +37,6 @@
     font = Sans 10
     foreground_color = "#c1c1c1"
     icon_bell = False
-    palette = "#000000:#ff6b68:#5f8787:#e78a53:#5f8787:#c1c1c1:#999999:#c1c1c1:#444444:#ff6b68:#fbcb97:#e78a53:#5f8787:#888888:#999999:#444444"
+    palette = "#000000:#ff6b68:#5f8787:#e78a53:#5f8787:#c1c1c1:#999999:#c1c1c1:#444444:#ff6b68:#eecc6c:#e78a53:#5f8787:#888888:#999999:#444444"
     scrollback_infinite = True
     show_titlebar = False

@@ -8,7 +8,7 @@ let s:white = [ '#999999', 250 ]
 let s:dgray = [ '#555555' , 67 ] 
 
 " insert mode
-let s:yellow = [ '#fbcb97', 71 ] 
+let s:yellow = [ '#eecc6c', 71 ] 
 
 " normal mode
 let s:blue = [ '#5f8787', 104 ] 

@@ -52,8 +52,10 @@ let g:base16_gui0C = "aaaaaa"
 " let s:gui0E        = "999999"
 " let g:base16_gui0E = "999999"
 
-let s:gui0D        = "fbcb97"
-let g:base16_gui0D = "fbcb97"
+" let s:gui0D        = "fbcb97"
+" let g:base16_gui0D = "fbcb97"
+let s:gui0D        = "eecc6c"
+let g:base16_gui0D = "eecc6c"
 let s:gui0E        = "5f8787"
 let g:base16_gui0E = "5f8787"
 
