@@ -75,6 +75,7 @@ Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go'
 " Plug 'ayu-theme/ayu-vim'
 Plug 'chriskempson/base16-vim'
+Plug 'arcticicestudio/nord-vim'
 call plug#end()
 
 " -----------------------------------------
@@ -142,11 +143,14 @@ set background=dark
 set t_Co=256
 set cursorline
 
+colorscheme nord
+let g:lightline = {'colorscheme': 'nord',}
+
 " colorscheme base16-tomorrow-night
 " let g:lightline = {'colorscheme': 'Tomorrow_Night',}
 
-colorscheme  base16-black-metal-bathory
-let g:lightline = {'colorscheme': 'blackmetal',}
+" colorscheme  base16-black-metal-bathory
+" let g:lightline = {'colorscheme': 'blackmetal',}
 
 " colorscheme base16-gruvbox-light-soft
 " let g:lightline = {'colorscheme': 'gruvbox',}
