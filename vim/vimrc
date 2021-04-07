@@ -92,6 +92,7 @@ let g:go_highlight_functions = 1
 " ctrlp 
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_use_caching = 0
+nnoremap <silent> <C-b> :CtrlPBuffer<CR>
 
 " multiple cursor
 let g:multi_cursor_exit_from_insert_mode = 1
