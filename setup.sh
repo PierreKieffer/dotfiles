@@ -81,9 +81,18 @@ sudo mv kubectl /usr/local/bin/
 # bashrc 
 echo "alias :t='tree'" >> $HOME/.bashrc
 echo "alias vimt='vim -c NERDTreeToggle'" >> $HOME/.bashrc
+echo "alias f='fg'" >> $HOME/.bashrc
+echo "alias j='jobs'" >> $HOME/.bashrc
+echo "alias gs='git status'" >> $HOME/.bashrc
+echo "alias gb='git branch'" >> $HOME/.bashrc
 echo 'gp() {
         git add . && git commit -m "$1" && git push 
 }' >> $HOME/.bashrc
+echo 'gc() {
+	git add . && git commit -m "$1"
+}' >> $HOME/.bashrc
+
+
 
 # prompt
 # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\[\033[00m\]>\[\033[01;34m\]\w\[\033[00m\]\$ '
