@@ -85,6 +85,7 @@ echo "alias vimt='vim -c NERDTreeToggle'" >> $HOME/.bashrc
 echo "alias f='fg'" >> $HOME/.bashrc
 echo "alias j='jobs'" >> $HOME/.bashrc
 echo "alias vf='vifm . .'" >> $HOME/.bashrc
+echo "alias v='vim'" >> $HOME/.bashrc
 echo "alias gs='git status'" >> $HOME/.bashrc
 echo "alias gb='git branch'" >> $HOME/.bashrc
 echo 'gp() {
