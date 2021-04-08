@@ -377,8 +377,7 @@ filextype */
 " Like in previous versions of vifm
 " set vifminfo=options,filetypes,commands,bookmarks,dhistory,state,cs
 " Like in vi
-set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,
-    \phistory,fhistory,dirstack,registers,bookmarks,bmarks
+" set vifminfo=dhistory,savedirs,chistory,state,tui,shistory,phistory,fhistory,dirstack,registers,bookmarks,bmarks
 
 " ------------------------------------------------------------------------------
 
@@ -449,8 +448,7 @@ nnoremap <f8> :delete<cr>
 " ------------------------------------------------------------------------------
 " leader
 nnoremap :q :q<cr>
-nnoremap :v :vsp<cr>
-nnoremap :o :only<cr>
+nnoremap :v :!vim<cr>
 
 " Various customization examples
 
