@@ -12,6 +12,7 @@ sudo apt update \
 	&& sudo apt install -y tree \
 	&& sudo apt install -y postgresql-client \
 	&& sudo apt install -y  mongodb-clients \
+	&& sudo apt install -y  vifm \
 # && sudo apt install -y software-properties-common
 
 
@@ -83,6 +84,7 @@ echo "alias :t='tree'" >> $HOME/.bashrc
 echo "alias vimt='vim -c NERDTreeToggle'" >> $HOME/.bashrc
 echo "alias f='fg'" >> $HOME/.bashrc
 echo "alias j='jobs'" >> $HOME/.bashrc
+echo "alias vf='vifm .'" >> $HOME/.bashrc
 echo "alias gs='git status'" >> $HOME/.bashrc
 echo "alias gb='git branch'" >> $HOME/.bashrc
 echo 'gp() {
