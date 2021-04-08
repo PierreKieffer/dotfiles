@@ -446,9 +446,10 @@ nnoremap <f8> :delete<cr>
 " ------------------------------------------------------------------------------
 " - Custom configuration -   
 " ------------------------------------------------------------------------------
-" leader
 nnoremap :q :q<cr>
 nnoremap :v :!vim<cr>
+map q <Nop>
+
 
 " Various customization examples
 
