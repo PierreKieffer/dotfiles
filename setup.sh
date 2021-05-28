@@ -86,8 +86,11 @@ echo "alias f='fg'" >> $HOME/.bashrc
 echo "alias j='jobs'" >> $HOME/.bashrc
 echo "alias vf='vifm . . -c view'" >> $HOME/.bashrc
 echo "alias v='vim'" >> $HOME/.bashrc
+
 echo "alias gs='git status'" >> $HOME/.bashrc
 echo "alias gb='git branch'" >> $HOME/.bashrc
+echo "alias gch='git checkout'" >> $HOME/.bashrc
+echo "alias gsh='git stash'" >> $HOME/.bashrc
 echo 'gp() {
         git add . && git commit -m "$1" && git push 
 }' >> $HOME/.bashrc
