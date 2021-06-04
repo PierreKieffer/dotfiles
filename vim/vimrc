@@ -72,6 +72,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go'
@@ -101,6 +102,13 @@ let g:multi_cursor_exit_from_visual_mode = 1
 let g:multi_cursor_select_all_word_key = '<C-a>'
 let g:multi_cursor_quit_key='<C-k>'
 
+" vim-fugitive
+nnoremap <leader>gs :G<CR>
+nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gl :Git log<CR>
+nnoremap <leader>gk :diffget //3<CR>
+nnoremap <leader>gj :diffget //2<CR>
+
 " -----------------------------------------
 " - file init -
 " -----------------------------------------
@@ -118,6 +126,11 @@ endfunction
 
 " json
 autocmd BufRead,BufNewFile *.json set cursorline!
+
+function Json()
+	:%s/'/"/g
+	:%!python -mjson.tool
+endfunction
 
 " flask template
 function FlaskTemp()
