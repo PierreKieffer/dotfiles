@@ -128,8 +128,8 @@ endfunction
 autocmd BufRead,BufNewFile *.json set cursorline!
 
 function Json()
-	:%s/'/"/g
-	:%!python -mjson.tool
+	:silent! %s/'/"/g
+	:silent! %!python -mjson.tool
 endfunction
 
 " flask template
