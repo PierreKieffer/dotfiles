@@ -32,8 +32,8 @@ nnoremap <leader>h :sp<cr>
 nnoremap <leader>v :vsp<cr>
 nnoremap <leader>w :wincmd w<cr>
 nnoremap <leader>t :tabnew<cr>
-nnoremap <leader>s :set hlsearch<cr> * 
-nnoremap <leader>S :set hlsearch!<cr> 
+nnoremap <leader>s :set hlsearch<cr> *bN
+nnoremap <leader>S :set hlsearch!<cr>  
 nnoremap :t :NERDTreeToggle<cr>
 
 nnoremap <F7> :%!python -mjson.tool<cr>
