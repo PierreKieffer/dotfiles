@@ -45,7 +45,7 @@ nnoremap m o<ESC>k
 imap kj <ESC>l
 
 " go to the first non-blank character in a line
-nnoremap à ^
+nnoremap F ^
 
 " auto closing brackets 
 inoremap " ""<left>
