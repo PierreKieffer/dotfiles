@@ -19,7 +19,6 @@ class Server():
                         decode = req.decode().split("\n")[0].split("\r")[0]
                         if decode == "exit" : 
                             client_socket.close()
-                            self.remove(client_socket)
                         else : 
                             print("Message received : {}".format(decode))
                             self.client_socket.send(str.encode("__ACK__\n"))
