@@ -12,20 +12,17 @@ class Server():
         self.server.listen()
         print ( "Listening on {}:{}".format(self.bind_ip, self.bind_port) )
 
-    def handler(self,client_socket):                                                                                                                                                                                                                                            
+    def handler(self, client_socket): 
             while True :
-                try : 
-                    req = client_socket.recv(4096)
-                    if req: 
-                        decode = req.decode().split("\n")[0].split("\r")[0]
-                        if decode == "exit" : 
-                            client_socket.close()
-                            sys.exit()
-                        else : 
-                            print("Message received : {}".format(decode))
-                            client_socket.send(str.encode("__ACK__\n"))
-                except : 
-                    continue 
+                req = client_socket.recv(4096)
+                if req: 
+                    decode = req.decode().split("\n")[0].split("\r")[0]
+                    if decode == "exit" : 
+                        client_socket.close()
+                        sys.exit()
+                    else : 
+                        print("Message received : {}".format(decode))
+                        client_socket.send(str.encode("__ACK__\n"))
 
     def run(self): 
         while True : 
