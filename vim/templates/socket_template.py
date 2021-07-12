@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import socket
 import threading
+import sys 
 
 class Server(): 
     def __init__(self): 
@@ -8,7 +9,7 @@ class Server():
         self.bind_port = 8080
         self.server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.server.bind((self.bind_ip, self.bind_port))
-        self.server.listen(5)
+        self.server.listen()
         print ( "Listening on {}:{}".format(self.bind_ip, self.bind_port) )
 
     def handler(self,client_socket):                                                                                                                                                                                                                                            
@@ -19,9 +20,10 @@ class Server():
                         decode = req.decode().split("\n")[0].split("\r")[0]
                         if decode == "exit" : 
                             client_socket.close()
+                            sys.exit()
                         else : 
                             print("Message received : {}".format(decode))
-                            self.client_socket.send(str.encode("__ACK__\n"))
+                            client_socket.send(str.encode("__ACK__\n"))
                 except : 
                     continue 
 
