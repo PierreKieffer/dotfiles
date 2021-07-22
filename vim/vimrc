@@ -12,6 +12,7 @@ set incsearch
 set scrolloff=8
 set splitbelow splitright
 
+
 " -----------------------------------------
 " - key mapping -
 " -----------------------------------------
@@ -128,6 +129,9 @@ endfunction
 autocmd BufRead,BufNewFile *.json set cursorline!
 
 function Json()
+	:silent! %s/None/null/g
+	:silent! %s/True/true/g
+	:silent! %s/False/false/g
 	:silent! %s/'/"/g
 	:silent! %!python -mjson.tool
 endfunction
@@ -144,6 +148,12 @@ function FastAPITemp()
    :read ~/.vim/templates/fastapi_template.py
 endfunction
 
+" fastapi template
+function SocketTemp()
+   :1,$d
+   :read ~/.vim/templates/socket_template.py
+endfunction
+
 " clean 
 function Clear()
    :1,$d
@@ -157,10 +167,10 @@ set termguicolors
 set t_Co=256
 set cursorline
 
-
 colorscheme nord
 let g:lightline = {'colorscheme': 'custom_nord',}
 set background=dark
+
 
 " colorscheme base16-tomorrow-night
 " let g:lightline = {'colorscheme': 'Tomorrow_Night',}
