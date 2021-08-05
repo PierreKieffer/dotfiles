@@ -37,6 +37,10 @@ nnoremap <leader>s :set hlsearch<cr> *bN
 nnoremap <leader>S :set hlsearch!<cr>  
 nnoremap <leader>m mm
 nnoremap <leader>M 'm
+nnoremap <leader>r qr
+nnoremap <leader>R q
+nnoremap <leader>à @r
+
 nnoremap :t :NERDTreeToggle<cr>
 
 nnoremap <F7> :%!python -mjson.tool<cr>
