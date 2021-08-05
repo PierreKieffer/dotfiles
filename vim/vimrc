@@ -11,6 +11,7 @@ set smartindent
 set incsearch
 set scrolloff=8
 set splitbelow splitright
+set showtabline=2
 
 
 " -----------------------------------------
@@ -35,8 +36,8 @@ nnoremap <leader>w :wincmd w<cr>
 nnoremap <leader>t :tabnew<cr>
 nnoremap <leader>s :set hlsearch<cr> *bN
 nnoremap <leader>S :set hlsearch!<cr>  
-nnoremap <leader>m mm
-nnoremap <leader>M 'm
+nnoremap m mm
+nnoremap M 'm
 nnoremap <leader>r qr
 nnoremap <leader>R q
 nnoremap <leader>à @r
@@ -46,7 +47,7 @@ nnoremap :t :NERDTreeToggle<cr>
 nnoremap <F7> :%!python -mjson.tool<cr>
 
 " insert new line out of insert mode 
-nnoremap m o<ESC>k
+" nnoremap m o<ESC>k
 
 " map esc key 
 imap kj <ESC>l
