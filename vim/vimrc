@@ -35,6 +35,8 @@ nnoremap <leader>w :wincmd w<cr>
 nnoremap <leader>t :tabnew<cr>
 nnoremap <leader>s :set hlsearch<cr> *bN
 nnoremap <leader>S :set hlsearch!<cr>  
+nnoremap <leader>m mm
+nnoremap <leader>M 'm
 nnoremap :t :NERDTreeToggle<cr>
 
 nnoremap <F7> :%!python -mjson.tool<cr>
@@ -167,9 +169,14 @@ set termguicolors
 set t_Co=256
 set cursorline
 
+" colorscheme base16-black-metal-bathory
+" let g:lightline = {'colorscheme': 'blackmetal',}
+
 colorscheme nord
 let g:lightline = {'colorscheme': 'custom_nord',}
 set background=dark
+" hi! Normal ctermbg=NONE guibg=NONE
+
 
 
 " colorscheme base16-tomorrow-night
