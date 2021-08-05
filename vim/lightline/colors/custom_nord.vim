@@ -3,6 +3,7 @@ let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': 
 
 let s:nord0 = ["#2E3440", "NONE"]
 let s:nord1 = ["#3B4252", 0]
+
 let s:nord2 = ["#434C5E", "NONE"]
 let s:nord3 = ["#4C566A", 8]
 let s:nord4 = ["#D8DEE9", "NONE"]
@@ -32,9 +33,9 @@ let s:p.insert.left = [ [ s:nord1, s:nord6 ], [ s:nord5, s:nord1 ] ]
 let s:p.replace.left = [ [ s:nord1, s:nord13 ], [ s:nord5, s:nord1 ] ]
 let s:p.visual.left = [ [ s:nord1, s:nord14 ], [ s:nord5, s:nord1 ] ]
 
-let s:p.tabline.left = [ [ s:nord5, s:nord3 ] ]
-let s:p.tabline.middle = [ [ s:nord5, s:nord3 ] ]
-let s:p.tabline.right = [ [ s:nord5, s:nord3 ] ]
-let s:p.tabline.tabsel = [ [ s:nord1, s:nord8 ] ]
+let s:p.tabline.left = [ [ s:nord5, s:nord1 ] ]
+let s:p.tabline.middle = [ [ s:nord1, s:nord1 ] ]
+let s:p.tabline.right = [ [ s:nord1, s:nord1 ] ]
+let s:p.tabline.tabsel = [ [ s:nord1, s:nord12 ] ]
 
 let g:lightline#colorscheme#custom_nord#palette = lightline#colorscheme#flatten(s:p)
