@@ -54,6 +54,8 @@ imap kj <ESC>l
 
 " go to the first non-blank character in a line
 nnoremap F ^
+" go to the last non-blank character in a line
+nnoremap E $
 
 " auto closing brackets 
 inoremap " ""<left>
