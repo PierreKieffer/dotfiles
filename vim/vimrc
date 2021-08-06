@@ -74,6 +74,7 @@ map q <Nop>
 " - pluggins -
 " -----------------------------------------
 call plug#begin('~/.vim/plugged')
+Plug 'junegunn/goyo.vim'
 Plug 'chrisbra/vim-commentary'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'itchyny/lightline.vim'
@@ -116,6 +117,9 @@ nnoremap <leader>gc :Git commit<CR>
 nnoremap <leader>gl :Git log<CR>
 nnoremap <leader>gk :diffget //3<CR>
 nnoremap <leader>gj :diffget //2<CR>
+
+" Goyo
+let g:goyo_width = 120
 
 " -----------------------------------------
 " - file init -
