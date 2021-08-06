@@ -1,0 +1,192 @@
+" -----------------------------------------
+" |           VIM CONFIGURATION           |
+" -----------------------------------------
+
+" -----------------------------------------
+" - std configuration -
+" -----------------------------------------
+syntax on
+set laststatus=2
+set smartindent
+set incsearch
+set scrolloff=8
+set splitbelow splitright
+set showtabline=2
+
+
+" -----------------------------------------
+" - key mapping -
+" -----------------------------------------
+" leader
+let mapleader = " "
+
+" save & quit 
+nnoremap :s :update<cr>
+nnoremap :q :q<cr>
+nnoremap <leader>qq :q!<cr>
+
+" utils 
+nnoremap <leader>b :bn<cr>
+nnoremap <leader>l :ls<cr>
+nnoremap <leader>c :wincmd c<cr>
+nnoremap <leader>n :set number!<cr>
+nnoremap <leader>h :sp<cr>
+nnoremap <leader>v :vsp<cr>
+nnoremap <leader>w :wincmd w<cr>
+nnoremap <leader>t :tabnew<cr>
+nnoremap <leader>s :set hlsearch<cr> *bN
+nnoremap <leader>S :set hlsearch!<cr>  
+nnoremap m mm
+nnoremap M 'm
+nnoremap <leader>r qr
+nnoremap <leader>R q
+nnoremap <leader>à @r
+
+nnoremap :t :NERDTreeToggle<cr>
+
+nnoremap <F7> :%!python -mjson.tool<cr>
+
+" insert new line out of insert mode 
+" nnoremap m o<ESC>k
+
+" map esc key 
+imap kj <ESC>l
+
+" go to the first non-blank character in a line
+nnoremap F ^
+
+" auto closing brackets 
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ` ``<left>
+inoremap ( ()<left>
+inoremap (<CR> (<CR>)<ESC>O
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
+inoremap /*<CR> /*<CR>*/<ESC>O
+
+" disable recording
+map q <Nop>
+
+" -----------------------------------------
+" - pluggins -
+" -----------------------------------------
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/goyo.vim'
+Plug 'chrisbra/vim-commentary'
+Plug 'mzlogin/vim-markdown-toc'
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'kien/ctrlp.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-surround'
+Plug 'fatih/vim-go'
+Plug 'chriskempson/base16-vim'
+Plug 'arcticicestudio/nord-vim'
+call plug#end()
+
+" -----------------------------------------
+" - special settings -
+" -----------------------------------------
+" set line numbers 
+set number
+
+" vim-go
+let g:go_template_use_pkg = 1
+let g:go_highlight_functions = 1
+" let g:go_highlight_function_calls = 1
+
+" ctrlp 
+let g:ctrlp_working_path_mode = 0
+let g:ctrlp_use_caching = 0
+nnoremap <silent> <C-b> :CtrlPBuffer<CR>
+
+" multiple cursor
+let g:multi_cursor_exit_from_insert_mode = 1
+let g:multi_cursor_exit_from_visual_mode = 1
+let g:multi_cursor_select_all_word_key = '<C-a>'
+let g:multi_cursor_quit_key='<C-k>'
+
+" vim-fugitive
+nnoremap <leader>gs :G<CR>
+nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gl :Git log<CR>
+nnoremap <leader>gk :diffget //3<CR>
+nnoremap <leader>gj :diffget //2<CR>
+
+" Goyo
+let g:goyo_width = 120
+
+" -----------------------------------------
+" - file init -
+" -----------------------------------------
+" bash
+autocmd BufNewFile *.sh 0r ~/.vim/templates/template.sh | :2
+function BashTemp()
+   :read ~/.vim/templates/template.sh
+endfunction
+
+" python
+autocmd BufNewFile *.py 0r ~/.vim/templates/template.py | :2
+function PyTemp()
+   :read ~/.vim/templates/template.py
+endfunction
+
+" json
+autocmd BufRead,BufNewFile *.json set cursorline!
+
+function Json()
+	:silent! %s/None/null/g
+	:silent! %s/True/true/g
+	:silent! %s/False/false/g
+	:silent! %s/'/"/g
+	:silent! %!python -mjson.tool
+endfunction
+
+" flask template
+function FlaskTemp()
+   :1,$d
+   :read ~/.vim/templates/flask_template.py
+endfunction
+
+" fastapi template
+function FastAPITemp()
+   :1,$d
+   :read ~/.vim/templates/fastapi_template.py
+endfunction
+
+" fastapi template
+function SocketTemp()
+   :1,$d
+   :read ~/.vim/templates/socket_template.py
+endfunction
+
+" clean 
+function Clear()
+   :1,$d
+endfunction
+
+" -----------------------------------------
+" - theme -
+" -----------------------------------------
+" custom
+set termguicolors
+set t_Co=256
+set cursorline
+
+colorscheme base16-tomorrow
+let g:lightline = {'colorscheme': 'Tomorrow',}
+set background=dark
+
+
+
+" colorscheme base16-tomorrow-night
+" let g:lightline = {'colorscheme': 'Tomorrow_Night',}
+
+" colorscheme base16-gruvbox-light-soft
+" let g:lightline = {'colorscheme': 'gruvbox',}
+

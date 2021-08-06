@@ -33,11 +33,11 @@
 [profiles]
   [[default]]
     allow_bold = False
-    background_color = "#2E3440"
-    cursor_color = "#D8DEE9"
+    background_color = "#f2e5bc"
+    cursor_color = "#282828"
     font = Sans 10
-    foreground_color = "#D8DEE9"
+    foreground_color = "#282828"
     icon_bell = False
-    palette = "#3B4252:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#8FBCBB:#ECEFF4"
+    palette = "#f2e5bc:#9d0006:#79740e:#b57614:#076678:#8f3f71:#427b58:#504945:#bdae93:#9d0006:#79740e:#b57614:#076678:#8f3f71:#427b58:#282828"
     scrollback_infinite = True
     show_titlebar = False
