@@ -299,6 +299,7 @@ call s:hi("Tag", s:nord4_gui, "", "", "", "", "")
 call s:hi("Todo", s:nord13_gui, "NONE", s:nord13_term, "NONE", "", "")
 call s:hi("Type", s:nord9_gui, "", s:nord9_term, "", "NONE", "")
 call s:hi("Typedef", s:nord9_gui, "", s:nord9_term, "", "", "")
+call s:hi("Ctrlp", s:nord12_gui, "NONE", s:nord12_term, "NONE", "", "")
 hi! link Macro Define
 hi! link PreCondit PreProc
 
@@ -609,7 +610,7 @@ hi! link NERDTreeHelp Comment
 
 " CtrlP
 " > ctrlpvim/ctrlp.vim
-hi! link CtrlPMatch Keyword
+hi! link CtrlPMatch Ctrlp
 hi! link CtrlPBufferHid Normal
 
 " vim-clap
