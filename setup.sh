@@ -33,14 +33,12 @@ echo 'SPARK_HOME=/usr/local/spark' >> $HOME/.bashrc
 rm spark-2.4.4-bin-hadoop2.7.tgz
 
 # go 
-wget https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz
-tar -xvf go1.14.4.linux-amd64.tar.gz
-sudo mv go /usr/local
+wget https://golang.org/dl/go1.16.7.linux-amd64.tar.gz
+tar -C /usr/local -xzf go1.16.7.linux-amd64.tar.gz
+echo 'export PATH=$PATH:/usr/local/go/bin' >> $HOME/.bashrc
 echo 'export GOROOT=/usr/local/go' >> $HOME/.bashrc
 echo 'export GOPATH=/home/$USER/go' >> $HOME/.bashrc
-echo 'export PATH=$PATH:/usr/local/go/bin' >> $HOME/.bashrc
-rm go1.14.4.linux-amd64.tar.gz
-mkdir -p $HOME/go/src
+rm go1.16.7.linux-amd64.tar.gz
 
 # sbt 
 wget https://github.com/sbt/sbt/releases/download/v1.3.7/sbt-1.3.7.zip
@@ -50,9 +48,6 @@ rm /home/$USER/sbt-1.3.7.zip
 echo 'export PATH=$PATH:/home/$USER/sbt/bin' >> /home/$USER/.bashrc
 
 # python 
-# wget -P ~/Downloads https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh
-# bash ~/Downloads/Anaconda3-2019.10-Linux-x86_64.sh
-# echo 'export PATH="/home/pierre/anaconda3/bin:$PATH"' >> $HOME/.bashrc
 sudo apt install -y python3-pip
 sudo apt install -y python3-venv
 echo "alias pip='pip3'" >> $HOME/.bashrc
