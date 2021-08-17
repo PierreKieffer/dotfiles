@@ -20,52 +20,43 @@ set showtabline=2
 " leader
 let mapleader = " "
 
-" map esc key 
-imap kj <ESC>l
-
 " save & quit 
 nnoremap :s :update<cr>
 nnoremap :q :q<cr>
 nnoremap <leader>qq :q!<cr>
 
-" buffers 
+" utils 
 nnoremap <leader>b :bn<cr>
 nnoremap <leader>l :ls<cr>
-
-" windows 
 nnoremap <leader>c :wincmd c<cr>
 nnoremap <leader>n :set number!<cr>
 nnoremap <leader>h :sp<cr>
 nnoremap <leader>v :vsp<cr>
 nnoremap <leader>w :wincmd w<cr>
 nnoremap <leader>t :tabnew<cr>
-
-" search 
 nnoremap <leader>s :set hlsearch<cr> *bN
 nnoremap <leader>S :set hlsearch!<cr>  
-
-" mark 
 nnoremap m mm
 nnoremap M 'm
-
-" macro 
+nnoremap tg gT
 nnoremap <leader>r qr
 nnoremap <leader>R q
 nnoremap <leader>à @r
-
-" moving block
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-" nerd tree 
-nnoremap :t :NERDTreeToggle<cr> 
+nnoremap :t :NERDTreeToggle<cr>
 
-" python json tool 
 nnoremap <F7> :%!python -mjson.tool<cr>
+
+" insert new line out of insert mode 
+" nnoremap m o<ESC>k
+
+" map esc key 
+imap kj <ESC>l
 
 " go to the first non-blank character in a line
 nnoremap F ^
-
 " go to the last non-blank character in a line
 nnoremap E $
 
@@ -83,9 +74,6 @@ inoremap /*<CR> /*<CR>*/<ESC>O
 
 " disable recording
 map q <Nop>
-
-" insert new line out of insert mode 
-" nnoremap m o<ESC>k
 
 " -----------------------------------------
 " - pluggins -
