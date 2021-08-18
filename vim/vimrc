@@ -24,6 +24,7 @@ let mapleader = " "
 nnoremap :s :update<cr>
 nnoremap :q :q<cr>
 nnoremap <leader>qq :q!<cr>
+nnoremap <leader>qa :qa!<cr>
 
 " utils 
 nnoremap <leader>b :bn<cr>
@@ -109,6 +110,10 @@ let g:go_highlight_functions = 1
 let g:ctrlp_working_path_mode = 0
 let g:ctrlp_use_caching = 0
 nnoremap <silent> <C-b> :CtrlPBuffer<CR>
+let g:ctrlp_prompt_mappings = {
+    \ 'PrtHistory(-1)':       ['<c-t>'],
+    \ 'AcceptSelection("t")': ['<c-n>'],
+    \ }
 
 " multiple cursor
 let g:multi_cursor_exit_from_insert_mode = 1
