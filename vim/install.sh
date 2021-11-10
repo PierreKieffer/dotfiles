@@ -17,4 +17,5 @@ cp -r $PWD/templates /home/$USER/.vim/
 vim +'PlugInstall --sync' +qa
 
 # copy color scheme 
-cp base16-vim/colors/base16-tomorrow-night.vim /home/$USER/.vim/plugged/base16-vim/colors
+cp nord/nord.vim /home/$USER/.vim/plugged/nord-vim/colors/nord.vim
+cp lightline/colors/custom_nord.vim /home/$USER/.vim/plugged/lightline.vim/autoload/lightline/colorscheme/
