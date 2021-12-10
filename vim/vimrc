@@ -31,6 +31,7 @@ nnoremap <leader>b :bn<cr>
 nnoremap <leader>l :ls<cr>
 nnoremap <leader>c :wincmd c<cr>
 nnoremap <leader>n :set number!<cr>
+nnoremap <leader>N :call Notes()<cr>
 nnoremap <leader>h :sp<cr>
 nnoremap <leader>v :vsp<cr>
 nnoremap <leader>w :wincmd w<cr>
@@ -180,6 +181,12 @@ endfunction
 " clean 
 function Clear()
    :1,$d
+endfunction
+
+" notes
+function Notes()
+   :silent! mkdir -p /tmp/notes && touch /tmp/notes/notes.md
+   :tabnew /tmp/notes/notes.md
 endfunction
 
 " -----------------------------------------
