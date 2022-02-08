@@ -92,6 +92,9 @@ echo 'gp() {
 echo 'gc() {
 	git add . && git commit -m "$1"
 }' >> $HOME/.bashrc
+echo 'vg(){
+	grep -rn "$1" -e "$2" | vim - "+:set hlsearch | /$2"
+}' >> $HOME/.bashrc
 
 
 
