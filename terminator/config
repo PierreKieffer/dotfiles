@@ -12,9 +12,11 @@
   title_receive_fg_color = "#212733"
   title_transmit_bg_color = "#282c34"
   title_transmit_fg_color = "#212733"
+  window_state = fullscreen
 [keybindings]
-  new_tab = <Alt>t
-  next_tab = <Alt>n
+  new_tab = <Alt>n
+  next_tab = <Alt>l
+  prev_tab = <Alt>h
   split_horiz = <Shift><Super>o
   split_vert = <Shift><Super>e
 [layouts]
@@ -33,11 +35,21 @@
 [profiles]
   [[default]]
     allow_bold = False
-    background_color = "#2E3440"
+    background_color = "#2e3440"
     cursor_color = "#D8DEE9"
     font = Sans 10
-    foreground_color = "#D8DEE9"
+    foreground_color = "#d8dee9"
     icon_bell = False
-    palette = "#3B4252:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#8FBCBB:#ECEFF4"
+    palette = "#3b4252:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#88c0d0:#e5e9f0:#4c566a:#bf616a:#a3be8c:#ebcb8b:#81a1c1:#b48ead:#8fbcbb:#eceff4"
+    scrollback_infinite = True
+    show_titlebar = False
+  [[Borland]]
+    allow_bold = False
+    background_color = "#0000a4"
+    cursor_color = "#ffa560"
+    font = Sans 10
+    foreground_color = "#ffff4e"
+    icon_bell = False
+    palette = "#4f4f4f:#ff6c60:#a8ff60:#ffffb6:#96cbfe:#ff73fd:#c6c5fe:#eeeeee:#7c7c7c:#ffb6b0:#ceffac:#ffffcc:#b5dcff:#ff9cfe:#dfdffe:#ffffff"
     scrollback_infinite = True
     show_titlebar = False
