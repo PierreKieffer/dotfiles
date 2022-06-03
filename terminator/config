@@ -16,6 +16,8 @@
 [keybindings]
   new_tab = <Alt>n
   next_tab = <Alt>l
+  page_down = <Alt>j
+  page_up = <Alt>k
   prev_tab = <Alt>h
   split_horiz = <Shift><Super>o
   split_vert = <Shift><Super>e
