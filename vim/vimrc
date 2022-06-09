@@ -50,8 +50,8 @@ vnoremap <leader>à :normal @r<cr>
 nnoremap "" yi"
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
-nnoremap J 20j
-nnoremap K 20k
+nnoremap <C-j> 20j
+nnoremap <C-k> 20k
 
 nnoremap :t :NERDTreeToggle<cr>
 
