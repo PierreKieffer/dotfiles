@@ -1,0 +1,31 @@
+@import url('/home/pierre/.local/share/gnome-shell/extensions/no-title-bar@franglais125.gmail.com/stylesheet.css');
+@import url('/home/pierre/.local/share/gnome-shell/extensions/no-title-bar@franglais125.gmail.com/stylesheet-tiled.css');
+
+.terminator-terminal-window notebook tab {
+    min-height: 0;
+    padding: 0px;
+    border: 0;
+    color: #8e908c;
+    background-color: #ffffff;
+}
+
+.terminator-terminal-window notebook tab button {
+    min-height: 0;
+    min-width: 0;
+    padding: 0px;
+    margin: 0px;
+    color: #ffffff;
+}
+
+.terminator-terminal-window notebook tab:checked button {
+    min-height: 0;
+    min-width: 0;
+    padding: 0px;
+    margin: 0px;
+    color: #ffffff;
+}
+
+
+.terminator-terminal-window notebook tab:checked {
+    color: #1d1f21;
+}
