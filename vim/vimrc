@@ -53,6 +53,8 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 nnoremap <C-j> 20j
 nnoremap <C-k> 20k
+vnoremap G g_
+vnoremap F ^
 
 nnoremap :t :NERDTreeToggle<cr>
 
@@ -193,9 +195,10 @@ function Clear()
 endfunction
 
 " notes
-function Notes()
-   :silent! mkdir -p /tmp/notes && touch /tmp/notes/notes.md
-   :tabnew /tmp/notes/notes.md
+function VimReminder()
+" :silent! mkdir -p /tmp/notes && touch /tmp/notes/notes.md
+" :tabnew /tmp/notes/notes.md
+  :tabnew ~/.vim/templates/reminder.md
 endfunction
 
 " -----------------------------------------
