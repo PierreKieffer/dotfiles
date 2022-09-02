@@ -53,7 +53,7 @@ vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 nnoremap <C-j> 20j
 nnoremap <C-k> 20k
-vnoremap G g_
+vnoremap E g_
 vnoremap F ^
 
 nnoremap :t :NERDTreeToggle<cr>
