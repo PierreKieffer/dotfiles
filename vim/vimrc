@@ -49,7 +49,7 @@ nnoremap <leader>R q
 nnoremap <leader>à @r
 vnoremap <leader>à :normal @r<cr>
 nnoremap "" yi"
-nnoremap ye vg_y
+nnoremap ye vg_y$
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 nnoremap <C-j> 20j
