@@ -43,6 +43,7 @@ nnoremap m mm
 nnoremap M 'm
 nnoremap tg gT
 nnoremap ù %
+vnoremap ù %
 nnoremap <leader>r qr
 nnoremap <leader>R q
 nnoremap <leader>à @r
@@ -208,13 +209,13 @@ set cursorline
 " colorscheme base16-black-metal-bathory
 " let g:lightline = {'colorscheme': 'blackmetal',}
 
-colorscheme nord
-let g:lightline = {'colorscheme': 'custom_nord',}
-set background=dark
-
-" colorscheme base16-tomorrow
-" let g:lightline = {'colorscheme': 'Tomorrow',}
+" colorscheme nord
+" let g:lightline = {'colorscheme': 'custom_nord',}
 " set background=dark
+
+colorscheme base16-tomorrow
+let g:lightline = {'colorscheme': 'Tomorrow',}
+set background=dark
 
 " hi! Normal ctermbg=NONE guibg=NONE
 
