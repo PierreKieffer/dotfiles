@@ -7,11 +7,13 @@
 " -----------------------------------------
 syntax on
 set laststatus=2
-set smartindent
 set incsearch
 set scrolloff=8
 set splitbelow splitright
 set showtabline=2
+set indentkeys-=0#
+filetype plugin on
+set expandtab shiftwidth=4 tabstop=4 softtabstop=4
 
 
 " -----------------------------------------
@@ -95,7 +97,7 @@ vnoremap p "_dP
 " -----------------------------------------
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/goyo.vim'
-Plug 'chrisbra/vim-commentary'
+Plug 'tpope/vim-commentary'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'itchyny/lightline.vim'
 Plug 'scrooloose/nerdtree'
@@ -213,13 +215,13 @@ set cursorline
 " colorscheme base16-black-metal-bathory
 " let g:lightline = {'colorscheme': 'blackmetal',}
 
-" colorscheme nord
-" let g:lightline = {'colorscheme': 'custom_nord',}
-" set background=dark
-
-colorscheme base16-tomorrow
-let g:lightline = {'colorscheme': 'Tomorrow',}
+colorscheme nord
+let g:lightline = {'colorscheme': 'custom_nord',}
 set background=dark
+
+" colorscheme base16-tomorrow
+" let g:lightline = {'colorscheme': 'Tomorrow',}
+" set background=dark
 
 " hi! Normal ctermbg=NONE guibg=NONE
 
