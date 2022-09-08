@@ -49,6 +49,9 @@ export BASH_FUNCTIONS
 
 .PHONY: vim
 
+dry : 
+	@cat Makefile
+
 install : bash terminal vim python go docker
 
 bash: 
@@ -58,15 +61,15 @@ bash:
 	@# ---- PS1 setup ----
 	@echo "\n ---- Setup : PS1 ----"
 	@echo "$$PS1_VALUE"
-	@echo "$$PS1_VALUE" >> /tmp/app/test
+	@echo "$$PS1_VALUE" >> $(HOME)/.bashrc
 	@# ---- aliases ---- 
 	@echo "\n ---- Setup : aliases ----"
 	@echo "$$ALIASES"
-	@echo "$$ALIASES" >> /tmp/app/test
+	@echo "$$ALIASES" >> $(HOME)/.bashrc
 	@# ---- functions ---- 
 	@echo "\n ---- Setup : bash functions ----"
 	@echo "$$BASH_FUNCTIONS"
-	@echo "$$BASH_FUNCTIONS" >> /tmp/app/test
+	@echo "$$BASH_FUNCTIONS" >> $(HOME)/.bashrc
 	
 terminal: 
 	@echo "\n--------------------------------"
