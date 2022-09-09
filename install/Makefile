@@ -85,17 +85,13 @@ vim:
 	@echo "\n ---- Install : vim-plug ----"
 	@curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	@echo "\n ---- Setup : vimrc ----"
-	@cp vim/vimrc /home/${USER}/.vimrc
+	@cp vim/vimrc ${HOME}/.vimrc
 	@echo "\n ---- Setup : templates ----"
-	@cp -r vim/templates /home/${USER}/.vim/
-	@echo "\n ---- Install : plugins ----"
-	@vim +'PlugInstall --sync' +qa
+	@cp -r vim/templates ${HOME}/.vim/
 	@echo "\n ---- Setup : colorscheme ----"
-	# @cp vim/colorscheme/nord.vim /home/${USER}/.vim/plugged/nord-vim/colors/nord.vim
-	@cp vim/colorscheme/nord.vim /home/${USER}/.vim/colors/nord.vim
-	@cp vim/colorscheme/lightline/custom_nord.vim /home/${USER}/.vim/plugged/lightline.vim/autoload/lightline/colorscheme/
+	@cp vim/colorscheme/nord.vim ${HOME}/.vim/colors/nord.vim
+	@cp vim/colorscheme/lightline/custom_nord.vim ${HOME}/.vim/plugged/lightline.vim/autoload/lightline/colorscheme/
 	
-
 
 python: 
 	@echo "\n-------------------------------"
