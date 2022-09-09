@@ -1,0 +1,44 @@
+[global_config]
+  borderless = True
+  dbus = False
+  enabled_plugins = TerminatorThemes, LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  inactive_color_offset = 0.802469135802
+  scroll_tabbar = True
+  title_font = Sans 6
+  title_hide_sizetext = True
+  title_inactive_bg_color = "#282c34"
+  title_inactive_fg_color = "#212733"
+  title_receive_bg_color = "#282c34"
+  title_receive_fg_color = "#212733"
+  title_transmit_bg_color = "#282c34"
+  title_transmit_fg_color = "#212733"
+  window_state = fullscreen
+[keybindings]
+  new_tab = <Alt>t
+  next_tab = <Alt>n
+  split_horiz = <Shift><Super>o
+  split_vert = <Shift><Super>e
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      /* size = 840, 960 */
+      parent = ""
+      position = 240:50
+      size = 1400, 960
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    allow_bold = False
+    background_color = "#ffffff"
+    cursor_color = "#4d4d4c"
+    font = Sans 10
+    foreground_color = "#4d4d4c"
+    icon_bell = False
+    palette = "#000000:#c82829:#718c00:#eab700:#4271ae:#8959a8:#3e999f:#ffffff:#000000:#c82829:#718c00:#eab700:#4271ae:#8959a8:#3e999f:#ffffff"
+    scrollback_infinite = True
+    show_titlebar = False

@@ -21,7 +21,7 @@ alias pip=pip3
 alias gs='git status'
 alias gb='git branch --sort=-committerdate'
 alias k='kubectl'
-alias cs='xclip -selection clipboard'
+alias cs='tr -d "\n" | xclip -selection clipboard'
 endef
 
 define BASH_FUNCTIONS 
@@ -80,6 +80,22 @@ vim:
 	@echo "\n---------------------------"
 	@echo "|    VIM configuration    |"
 	@echo "---------------------------"
+	@echo "\n ---- Install : VIM ----"
+	@sudo apt update && sudo apt install vim
+	@echo "\n ---- Install : vim-plug ----"
+	@curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	@echo "\n ---- Setup : vimrc ----"
+	@cp vim/vimrc /home/${USER}/.vimrc
+	@echo "\n ---- Setup : templates ----"
+	@cp -r vim/templates /home/${USER}/.vim/
+	@echo "\n ---- Install : plugins ----"
+	@vim +'PlugInstall --sync' +qa
+	@echo "\n ---- Setup : colorscheme ----"
+	# @cp vim/colorscheme/nord.vim /home/${USER}/.vim/plugged/nord-vim/colors/nord.vim
+	@cp vim/colorscheme/nord.vim /home/${USER}/.vim/colors/nord.vim
+	@cp vim/colorscheme/lightline/custom_nord.vim /home/${USER}/.vim/plugged/lightline.vim/autoload/lightline/colorscheme/
+	
+
 
 python: 
 	@echo "\n-------------------------------"
