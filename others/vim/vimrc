@@ -107,9 +107,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go'
-" Plug 'chriskempson/base16-vim'
-" Plug 'arcticicestudio/nord-vim'
-" Plug 'rust-lang/rust.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'arcticicestudio/nord-vim'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " -----------------------------------------
@@ -195,11 +195,6 @@ endfunction
 " clean 
 function Clear()
    :1,$d
-endfunction
-
-" find and replace all  
-function FindAndReplaceAll(source, target)
-    exe silent! '%s/' . a:source . '/' . a:target . '/g'
 endfunction
 
 " notes

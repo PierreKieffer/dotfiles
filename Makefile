@@ -52,7 +52,10 @@ export BASH_FUNCTIONS
 dry : 
 	@cat Makefile
 
-install : bash terminal vim python go docker
+build : bash packages vim terminal python go docker source-install 
+
+source-install : 
+	@source ${HOME}/.bashrc
 
 bash: 
 	@echo "------------------------------------"
@@ -93,12 +96,24 @@ vim:
 	@cp vim/colorscheme/lightline/custom_nord.vim ${HOME}/.vim/plugged/lightline.vim/autoload/lightline/colorscheme/
 	
 
+packages : 
+	@echo "\n--------------------------"
+	@echo "|    Packages install    |"
+	@echo "--------------------------"
+	@sudo apt update
+	@sudo apt install -y git zip unzip curl wget tig tree postgresql-client mongodb-clients
+
 python: 
 	@echo "\n-------------------------------"
 	@echo "|    Python3 configuration    |"
 	@echo "-------------------------------"
 	@# ---- python default venv ----
-	# source /home/pierre/venv/trunk/bin/activate
+	@sudo apt install -y python3-pip
+	@sudo apt install -y python3-venv
+	@mkdir ${HOME}/venv
+	@python3 -m venv ${HOME}/venv/dev
+	@echo "source $$HOME/venv/dev/bin/activate" >> ${HOME}/.bashrc
+	@pip install --upgrade pip
 
 go: 
 	@echo "\n------------------------------"
