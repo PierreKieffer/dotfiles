@@ -2,6 +2,7 @@
 ###############################################################
 ###############################################################
 
+SHELL=/bin/bash
 
 ######## DEFINE ########
 define PS1_VALUE 
@@ -56,6 +57,7 @@ build : bash packages vim terminal python go docker source-install
 
 source-install : 
 	@source ${HOME}/.bashrc
+	@source /usr/bin/usr/lib/git-core/git-sh-prompt
 
 bash: 
 	@echo "------------------------------------"
