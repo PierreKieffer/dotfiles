@@ -89,9 +89,12 @@ vim:
 	@curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	@echo "\n ---- Setup : vimrc ----"
 	@cp vim/vimrc ${HOME}/.vimrc
+	@echo "\n ---- Setup : plugins ----"
+	@vim +'PlugInstall --sync' +qa
 	@echo "\n ---- Setup : templates ----"
 	@cp -r vim/templates ${HOME}/.vim/
 	@echo "\n ---- Setup : colorscheme ----"
+	@mkdir ${HOME}/.vim/colors
 	@cp vim/colorscheme/nord.vim ${HOME}/.vim/colors/nord.vim
 	@cp vim/colorscheme/lightline/custom_nord.vim ${HOME}/.vim/plugged/lightline.vim/autoload/lightline/colorscheme/
 	
