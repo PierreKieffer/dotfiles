@@ -39,7 +39,7 @@ vg(){
  grep -rn "$1" -e "$2" | vim - "+:set hlsearch | /$2"
 }
 tmp(){
- cd /tmp && mkdir "$1" && cd "$1"
+ cd /tmp && mkdir -p "$1" && cd "$1"
 }
 endef 
 
@@ -96,7 +96,7 @@ vim:
 	@echo "\n ---- Setup : templates ----"
 	@cp -r vim/templates ${HOME}/.vim/
 	@echo "\n ---- Setup : colorscheme ----"
-	@mkdir ${HOME}/.vim/colors
+	@mkdir -p ${HOME}/.vim/colors
 	@cp vim/colorscheme/nord.vim ${HOME}/.vim/colors/nord.vim
 	@cp vim/colorscheme/lightline/custom_nord.vim ${HOME}/.vim/plugged/lightline.vim/autoload/lightline/colorscheme/
 	
@@ -106,7 +106,7 @@ packages :
 	@echo "|    Packages install    |"
 	@echo "--------------------------"
 	@sudo apt update
-	@sudo apt install -y git zip unzip curl wget tig tree postgresql-client mongodb-clients
+	@sudo apt install -y git zip unzip curl wget tig tree
 
 python: 
 	@echo "\n-------------------------------"
@@ -115,10 +115,10 @@ python:
 	@# ---- python default venv ----
 	@sudo apt install -y python3-pip
 	@sudo apt install -y python3-venv
-	@mkdir ${HOME}/venv
+	@mkdir -p ${HOME}/venv
 	@python3 -m venv ${HOME}/venv/dev
 	@echo "source $$HOME/venv/dev/bin/activate" >> ${HOME}/.bashrc
-	@pip install --upgrade pip
+	@pip3 install --upgrade pip
 
 go: 
 	@echo "\n------------------------------"
