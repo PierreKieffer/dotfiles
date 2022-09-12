@@ -220,7 +220,7 @@ set cursorline
 " colorscheme base16-black-metal-bathory
 " let g:lightline = {'colorscheme': 'blackmetal',}
 
-colorscheme nord
+silent! colorscheme nord
 let g:lightline = {'colorscheme': 'custom_nord',}
 set background=dark
 
