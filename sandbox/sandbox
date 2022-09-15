@@ -1,0 +1,33 @@
+#!/bin/bash
+
+CYAN='\033[0;36m'
+RED='\033[0;31m'
+NC='\033[0m'
+
+DEFAULT_INPUT=$1
+
+function sandbox_menu(){
+    clear
+    printf "${RED} ---- SANDBOX ---- ${NC}\n"
+    echo "[ 1 ] start new instance"
+    echo "[ 2 ] list running instances"
+
+    read -p "> " SANDBOX_MENU_SELECT
+
+    if [ "$SANDBOX_MENU_SELECT" = 1  ];then
+        docker run -it --name sandbox sandbox /bin/bash
+    elif [ "$SANDBOX_MENU_SELECT" = 2  ];then
+        get_instances
+    else
+        sandbox_menu
+    fi
+}
+
+function get_instances(){
+    running_instances=$(docker ps --format "{{.Names}}" | grep sandbox)
+    echo $running_instances
+}
+
+
+sandbox_menu
+

@@ -53,7 +53,7 @@ export BASH_FUNCTIONS
 dry : 
 	@cat Makefile
 
-build-sandbox: 
+build-sandbox-image: 
 	@docker build -t sandbox .
 
 

@@ -7,3 +7,4 @@ RUN apt update && apt install -y make
 WORKDIR /tmp 
 RUN make build
 
+WORKDIR /root
