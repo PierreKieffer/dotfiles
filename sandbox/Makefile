@@ -6,7 +6,7 @@ SHELL=/bin/bash
 
 ######## DEFINE ########
 define PS1_VALUE 
-PS1="$${debian_chroot:+($$debian_chroot)}> \[\033[01;34m\]\w\[\033[00m\]\[\033[01;33m\]\$$(__git_ps1 ' [%s] ')\[\033[00m\]\$$ "
+PS1="$${debian_chroot:+($$debian_chroot)}\[\033[0;31m\]● [SANDBOX]\[\033[00m\]> \[\033[01;34m\]\w\[\033[00m\]\[\033[01;33m\]\$$(__git_ps1 ' [%s] ')\[\033[00m\]\$$ "
 endef
 
 define ALIASES
@@ -86,7 +86,7 @@ vim:
 	@echo "|    VIM configuration    |"
 	@echo "---------------------------"
 	@echo "\n ---- Install : VIM ----"
-	@sudo apt update && sudo apt install -y vim
+	@apt update && apt install -y vim
 	@echo "\n ---- Install : vim-plug ----"
 	@curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	@echo "\n ---- Setup : vimrc ----"
@@ -105,21 +105,21 @@ packages :
 	@echo "\n--------------------------"
 	@echo "|    Packages install    |"
 	@echo "--------------------------"
-	@sudo apt update
-	@sudo apt install -y git zip unzip curl wget tig tree
+	@apt update
+	@apt install -y git zip unzip curl wget tig tree
 
 python: 
 	@echo "\n-------------------------------"
 	@echo "|    Python3 configuration    |"
 	@echo "-------------------------------"
 	@# ---- python default venv ----
-	@sudo apt install -y python3-pip
-	@sudo apt install -y python3-venv
+	@apt install -y python3-pip
+	@apt install -y python3-venv
 	@pip3 install --upgrade pip
-	@mkdir -p ${HOME}/venv
-	@python3 -m venv ${HOME}/venv/dev
-	@echo "source $$HOME/venv/dev/bin/activate" >> ${HOME}/.bashrc
-	@sed -i 's/PS1="(dev) $${PS1:-}"/PS1="\\[\\033[1;34m\\](dev)\\[\\033[00m\\] $${PS1:-}"/' ${HOME}/venv/dev/bin/activate
+	@# @mkdir -p ${HOME}/venv
+	@# @python3 -m venv ${HOME}/venv/dev
+	@# @echo "source $$HOME/venv/dev/bin/activate" >> ${HOME}/.bashrc
+	@# @sed -i 's/PS1="(dev) $${PS1:-}"/PS1="\\[\\033[0;31m\\](dev)\\[\\033[00m\\] $${PS1:-}"/' ${HOME}/venv/dev/bin/activate
 
 go: 
 	@echo "\n------------------------------"
