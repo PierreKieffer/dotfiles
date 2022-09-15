@@ -53,9 +53,14 @@ export BASH_FUNCTIONS
 dry : 
 	@cat Makefile
 
+build-sandbox: 
+	@docker build -t sandbox .
+
+
 build : packages bash vim terminal python go docker source-install 
 
 source-install : 
+	@echo "source /usr/lib/git-core/git-sh-prompt" >> $(HOME)/.bashrc
 	@source ${HOME}/.bashrc
 	@source /usr/lib/git-core/git-sh-prompt
 
