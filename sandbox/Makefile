@@ -6,7 +6,11 @@ SHELL=/bin/bash
 
 ######## DEFINE ########
 define PS1_VALUE 
-PS1="$${debian_chroot:+($$debian_chroot)}\[\033[0;31m\]● [SANDBOX]\[\033[00m\]> \[\033[01;34m\]\w\[\033[00m\]\[\033[01;33m\]\$$(__git_ps1 ' [%s] ')\[\033[00m\]\$$ "
+NC='\033[0m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+PS1="$${debian_chroot:+($$debian_chroot)}$${RED}● [SANDBOX]$${NC}➤ $${BLUE}\w$${NC}$${YELLOW}$$(__git_ps1 ' [%s] ')$${NC}\$$ "
 endef
 
 define ALIASES

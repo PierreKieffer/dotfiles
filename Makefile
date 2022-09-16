@@ -6,7 +6,11 @@ SHELL=/bin/bash
 
 ######## DEFINE ########
 define PS1_VALUE 
-PS1="$${debian_chroot:+($$debian_chroot)}> \[\033[01;34m\]\w\[\033[00m\]\[\033[01;33m\]\$$(__git_ps1 ' [%s] ')\[\033[00m\]\$$ "
+NC='\033[0m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
+PS1="$${debian_chroot:+($$debian_chroot)}➤ $${BLUE}\w$${NC}$${YELLOW}\$$(__git_ps1 ' [%s] ')$${NC}\$$ "
 endef
 
 define ALIASES
@@ -119,7 +123,7 @@ python:
 	@mkdir -p ${HOME}/venv
 	@python3 -m venv ${HOME}/venv/dev
 	@echo "source $$HOME/venv/dev/bin/activate" >> ${HOME}/.bashrc
-	@sed -i 's/PS1="(dev) $${PS1:-}"/PS1="\\[\\033[1;34m\\](dev)\\[\\033[00m\\] $${PS1:-}"/' ${HOME}/venv/dev/bin/activate
+	@sed -i 's/PS1="(dev) $${PS1:-}"/PS1="\\[\\033[1;34m\\]● (dev)\\[\\033[00m\\] $${PS1:-}"/' ${HOME}/venv/dev/bin/activate
 
 go: 
 	@echo "\n------------------------------"
