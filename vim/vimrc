@@ -14,6 +14,7 @@ set showtabline=2
 set indentkeys-=0#
 filetype plugin on
 set expandtab shiftwidth=4 tabstop=4 softtabstop=4
+set colorcolumn=80
 
 
 " -----------------------------------------
@@ -44,6 +45,8 @@ nnoremap <leader>f :<C-f>k
 nnoremap m mm
 nnoremap M 'm
 nnoremap tg gT
+nnoremap <C-l> gt
+nnoremap <C-h> gT
 nnoremap ù %
 vnoremap ù %
 nnoremap <leader>r qr
@@ -107,9 +110,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go'
-" Plug 'chriskempson/base16-vim'
-" Plug 'arcticicestudio/nord-vim'
-" Plug 'rust-lang/rust.vim'
+Plug 'chriskempson/base16-vim'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " -----------------------------------------
