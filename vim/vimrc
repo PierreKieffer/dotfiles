@@ -15,6 +15,7 @@ set indentkeys-=0#
 filetype plugin on
 set expandtab shiftwidth=4 tabstop=4 softtabstop=4
 set colorcolumn=80
+sign define marksign text=● linehl=DiffAdd texthl=String
 
 
 " -----------------------------------------
@@ -42,8 +43,11 @@ nnoremap <leader>t :tabnew<cr>
 nnoremap <leader>s :set hlsearch<cr> *bN
 nnoremap <leader>S :set hlsearch!<cr>  
 nnoremap <leader>f :<C-f>k
-nnoremap m mm
-nnoremap M 'm
+nnoremap <leader>m mm
+nnoremap <leader>M 'm
+nnoremap <silent> mm :call MarkLine()<CR>
+nnoremap <silent> MM :call UnMarkLine()<CR>
+" let g:signjump = {'use_jumplist': 1, 'map_next_sign': 'ms', 'map_prev_sign': 'MS'}
 nnoremap tg gT
 nnoremap <C-l> gt
 nnoremap <C-h> gT
@@ -54,6 +58,7 @@ nnoremap <leader>R q
 nnoremap <leader>à @r
 vnoremap <leader>à :normal @r<cr>
 nnoremap "" yi"
+nnoremap (( yi(
 nnoremap ye vg_y$
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
@@ -111,6 +116,7 @@ Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go'
 Plug 'chriskempson/base16-vim'
+Plug 'arcticicestudio/nord-vim'
 Plug 'rust-lang/rust.vim'
 call plug#end()
 
@@ -199,6 +205,9 @@ function Clear()
    :1,$d
 endfunction
 
+" -----------------------------------------
+" - utils -
+" -----------------------------------------
 " find and replace all  
 function FindAndReplaceAll(source, target)
     exe silent! '%s/' . a:source . '/' . a:target . '/g'
@@ -211,6 +220,14 @@ function VimReminder()
   :tabnew ~/.vim/templates/reminder.md
 endfunction
 
+function MarkLine()
+    silent! exec 'sign place '.line(".").' line='.line(".").' name=marksign file=' . expand("%:p")
+endfunc
+
+function UnMarkLine()
+    silent! exec 'sign unplace '.line(".")
+endfunc
+
 " -----------------------------------------
 " - theme -
 " -----------------------------------------
@@ -218,11 +235,7 @@ endfunction
 set termguicolors
 set t_Co=256
 set cursorline
-
-" colorscheme base16-black-metal-bathory
-" let g:lightline = {'colorscheme': 'blackmetal',}
-
-silent! colorscheme nord
+colorscheme nord
 let g:lightline = {'colorscheme': 'custom_nord',}
 set background=dark
 
@@ -230,20 +243,6 @@ set background=dark
 " let g:lightline = {'colorscheme': 'Tomorrow',}
 " set background=dark
 
-" hi! Normal ctermbg=NONE guibg=NONE
-
-
-
-" colorscheme base16-tomorrow-night
-" let g:lightline = {'colorscheme': 'Tomorrow_Night',}
-
-" colorscheme base16-gruvbox-light-soft
-" let g:lightline = {'colorscheme': 'gruvbox',}
-
-" ayu
-" set termguicolors
-" let ayucolor="mirage"
-" colorscheme ayu
-" let g:lightline = {'colorscheme': 'ayu',}
-" set cursorline
-
+" show hi groups : 
+" so $VIMRUNTIME/syntax/hitest.vim
+"
