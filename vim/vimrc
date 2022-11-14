@@ -218,6 +218,11 @@ function VimReminder()
   :tabnew ~/.vim/templates/reminder.md
 endfunction
 
+" -----------------------------------------
+" - Debugger -
+" -----------------------------------------
+autocmd BufEnter * call RetrieveDebugPoint()
+
 function SetDebugPoint()
     " Store current cursor line"
     let cursor = line(".")
@@ -236,6 +241,16 @@ function DelDebugPoint()
     silent! delmark m
 endfunc
 
+function RetrieveDebugPoint()
+    try  
+        'm
+        silent! exec 'sign place '.line(".").' line='.line(".").' name=marksign file=' . expand("%:p")
+    catch
+    finally 
+        :1
+    endtry 
+endfunc
+
 function GotoLine(line)
      execute a:line
 endfunction
@@ -250,6 +265,7 @@ set cursorline
 colorscheme nord
 let g:lightline = {'colorscheme': 'custom_nord',}
 set background=dark
+
 
 " colorscheme base16-tomorrow
 " let g:lightline = {'colorscheme': 'Tomorrow',}
