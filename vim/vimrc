@@ -43,11 +43,9 @@ nnoremap <leader>t :tabnew<cr>
 nnoremap <leader>s :set hlsearch<cr> *bN
 nnoremap <leader>S :set hlsearch!<cr>  
 nnoremap <leader>f :<C-f>k
-nnoremap <leader>m mm
-nnoremap <leader>M 'm
-nnoremap <silent> mm :call MarkLine()<CR>
-nnoremap <silent> MM :call UnMarkLine()<CR>
-" let g:signjump = {'use_jumplist': 1, 'map_next_sign': 'ms', 'map_prev_sign': 'MS'}
+nnoremap gm 'm
+nnoremap <silent> m :call SetDebugPoint()<CR> 
+nnoremap <silent> M :call DelDebugPoint()<CR>
 nnoremap tg gT
 nnoremap <C-l> gt
 nnoremap <C-h> gT
@@ -220,13 +218,27 @@ function VimReminder()
   :tabnew ~/.vim/templates/reminder.md
 endfunction
 
-function MarkLine()
+function SetDebugPoint()
+    " Store current cursor line"
+    let cursor = line(".")
+    " Clear previous debug"
+    call DelDebugPoint()
+    " Back to cursor line 
+    call GotoLine(cursor)
+    " Set debug point 
+    mark m
     silent! exec 'sign place '.line(".").' line='.line(".").' name=marksign file=' . expand("%:p")
 endfunc
 
-function UnMarkLine()
+function DelDebugPoint()
+    silent! 'm
     silent! exec 'sign unplace '.line(".")
+    silent! delmark m
 endfunc
+
+function GotoLine(line)
+     execute a:line
+endfunction
 
 " -----------------------------------------
 " - theme -
