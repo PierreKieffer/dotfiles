@@ -16,6 +16,10 @@ filetype plugin on
 set expandtab shiftwidth=4 tabstop=4 softtabstop=4
 set colorcolumn=80
 sign define marksign text=● linehl=DiffAdd texthl=String
+sign define marksignGreen text=● linehl=DiffAdd texthl=String
+sign define marksignYellow text=● linehl=DiffChange texthl=Todo
+sign define marksignOrange text=● linehl=LightlineLeft_normal_tabsel texthl=Ctrlp
+sign define marksignRed text=● linehl=DiffDelete texthl=ALEErrorSign
 
 
 " -----------------------------------------
@@ -44,8 +48,8 @@ nnoremap <leader>s :set hlsearch<cr> *bN
 nnoremap <leader>S :set hlsearch!<cr>  
 nnoremap <leader>f :<C-f>k
 nnoremap gm 'm
-nnoremap <silent> m :call SetDebugPoint()<CR> 
-nnoremap <silent> M :call DelDebugPoint()<CR>
+nnoremap m :call SetDebugPoint()<CR>
+nnoremap M :call DelDebugPoint()<CR>
 nnoremap tg gT
 nnoremap <C-l> gt
 nnoremap <C-h> gT
@@ -225,14 +229,14 @@ autocmd BufEnter * call RetrieveDebugPoint()
 
 function SetDebugPoint()
     " Store current cursor line"
-    let cursor = line(".")
+    let cursor = getpos(".")
     " Clear previous debug"
     call DelDebugPoint()
     " Back to cursor line 
-    call GotoLine(cursor)
+    call setpos(".", cursor)
     " Set debug point 
     mark m
-    silent! exec 'sign place '.line(".").' line='.line(".").' name=marksign file=' . expand("%:p")
+    silent! exec 'sign place '.line(".").' line='.line(".").' name=marksignOrange file=' . expand("%:p")
 endfunc
 
 function DelDebugPoint()
