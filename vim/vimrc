@@ -15,12 +15,6 @@ set indentkeys-=0#
 filetype plugin on
 set expandtab shiftwidth=4 tabstop=4 softtabstop=4
 set colorcolumn=80
-sign define marksign text=● linehl=DiffAdd texthl=String
-sign define marksignGreen text=● linehl=DiffAdd texthl=String
-sign define marksignYellow text=● linehl=DiffChange texthl=Todo
-sign define marksignOrange text=● linehl=LightlineLeft_normal_tabsel texthl=Ctrlp
-sign define marksignRed text=● linehl=DiffDelete texthl=ALEErrorSign
-
 
 " -----------------------------------------
 " - key mapping -
@@ -47,9 +41,6 @@ nnoremap <leader>t :tabnew<cr>
 nnoremap <leader>s :set hlsearch<cr> *bN
 nnoremap <leader>S :set hlsearch!<cr>  
 nnoremap <leader>f :<C-f>k
-nnoremap gm 'm
-nnoremap m :call SetDebugPoint()<CR>
-nnoremap M :call DelDebugPoint()<CR>
 nnoremap tg gT
 nnoremap <C-l> gt
 nnoremap <C-h> gT
@@ -120,6 +111,7 @@ Plug 'fatih/vim-go'
 Plug 'chriskempson/base16-vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'rust-lang/rust.vim'
+Plug '~/.vim/plugged/flag.vim'
 call plug#end()
 
 " -----------------------------------------
@@ -220,43 +212,6 @@ function VimReminder()
 " :silent! mkdir -p /tmp/notes && touch /tmp/notes/notes.md
 " :tabnew /tmp/notes/notes.md
   :tabnew ~/.vim/templates/reminder.md
-endfunction
-
-" -----------------------------------------
-" - Debugger -
-" -----------------------------------------
-autocmd BufEnter * call RetrieveDebugPoint()
-
-function SetDebugPoint()
-    " Store current cursor line"
-    let cursor = getpos(".")
-    " Clear previous debug"
-    call DelDebugPoint()
-    " Back to cursor line 
-    call setpos(".", cursor)
-    " Set debug point 
-    mark m
-    silent! exec 'sign place '.line(".").' line='.line(".").' name=marksignOrange file=' . expand("%:p")
-endfunc
-
-function DelDebugPoint()
-    silent! 'm
-    silent! exec 'sign unplace '.line(".")
-    silent! delmark m
-endfunc
-
-function RetrieveDebugPoint()
-    try  
-        'm
-        silent! exec 'sign place '.line(".").' line='.line(".").' name=marksign file=' . expand("%:p")
-    catch
-    finally 
-        :1
-    endtry 
-endfunc
-
-function GotoLine(line)
-     execute a:line
 endfunction
 
 " -----------------------------------------
