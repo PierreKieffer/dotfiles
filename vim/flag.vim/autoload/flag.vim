@@ -1,3 +1,5 @@
+let s:flagvalue = ""
+
 function! flag#Flag(t)
     " Store current cursor line"
     let cursor = getpos(".")
@@ -55,6 +57,48 @@ function! flag#GoToFlag(t)
     elseif a:t=="red"
         silent! 'r
     endif
+endfunc
+
+function! flag#GoToNextFlag()
+    try 
+        if s:flagvalue == ""
+            try 
+                let s:flagvalue = "green"
+                'g
+            catch 
+                :call flag#GoToNextFlag()
+            endtry
+        elseif s:flagvalue == "green"
+            try 
+                let s:flagvalue = "yellow"
+                'y
+            catch 
+                :call flag#GoToNextFlag()
+            endtry 
+        elseif s:flagvalue == "yellow"
+            try 
+                let s:flagvalue = "orange"
+                'o
+            catch 
+                :call flag#GoToNextFlag()
+            endtry 
+        elseif s:flagvalue == "orange"
+            try 
+                let s:flagvalue = "red"
+                'r
+            catch 
+                :call flag#GoToNextFlag()
+            endtry
+        elseif s:flagvalue == "red"
+            try
+                let s:flagvalue = "green"
+                'g
+            catch 
+                :call flag#GoToNextFlag()
+            endtry
+        endif
+    catch 
+    endtry
 endfunc
 
 function! flag#RetrieveFlags()
