@@ -29,3 +29,5 @@ nnoremap My :silent call flag#GoToFlag("yellow")<CR>
 nnoremap Mo :silent call flag#GoToFlag("orange")<CR>
 nnoremap Mr :silent call flag#GoToFlag("red")<CR>
 
+nnoremap <leader>m :silent call flag#GoToNextFlag()<CR>
+
