@@ -64,35 +64,23 @@ echo -e "${GREEN}Vim configuration installed successfully!${NC}"
 echo -e "${YELLOW}Optional: Add template files to ~/.vim/templates/${NC}"
 echo -e "${YELLOW}Dependencies: Python (for JSON formatting), Git (for fugitive)${NC}"
 
-# Create installation log
-echo -e "${YELLOW}Creating installation log...${NC}"
-mkdir -p ~/.vim
-{
-    echo "================================="
-    echo "VIM CONFIGURATION INSTALL LOG"
-    echo "================================="
-    echo "Date: $(date)"
-    echo "User: $(whoami)"
-    echo "System: $(uname -a)"
-    echo ""
-    echo "Installation Details:"
-    echo "- vim-plug: $([ -f ~/.vim/autoload/plug.vim ] && echo "✓ Installed" || echo "✗ Not found")"
-    echo "- vimrc: $([ -f ~/.vimrc ] && echo "✓ Installed" || echo "✗ Not found")"
-    echo "- Templates dir: $([ -d ~/.vim/templates ] && echo "✓ Created" || echo "✗ Not found")"
-    echo ""
-    echo "Plugin Status:"
-    if [ -f ~/.vimrc ]; then
-        vim -E -s -u ~/.vimrc -c 'PlugStatus' -c 'qall!' 2>&1 | grep -E "✓|✗|Error|Failed" || echo "Unable to get plugin status"
-    else
-        echo "vimrc not found - cannot check plugin status"
-    fi
-    echo ""
-    echo "Installation completed at: $(date)"
-} > ~/.vim/install.log 2>&1
-
-if [ -f ~/.vim/install.log ]; then
-    echo -e "${GREEN}Installation log saved to ~/.vim/install.log${NC}"
-    echo -e "${YELLOW}View log with: cat ~/.vim/install.log${NC}"
+echo ""
+echo -e "${GREEN}=================================${NC}"
+echo -e "${GREEN}INSTALLATION SUMMARY${NC}"
+echo -e "${GREEN}=================================${NC}"
+echo "Date: $(date)"
+echo "User: $(whoami)"
+echo ""
+echo "Components installed:"
+echo "- vim-plug: $([ -f ~/.vim/autoload/plug.vim ] && echo "✓ Installed" || echo "✗ Not found")"
+echo "- vimrc: $([ -f ~/.vimrc ] && echo "✓ Installed" || echo "✗ Not found")"
+echo "- Templates dir: $([ -d ~/.vim/templates ] && echo "✓ Created" || echo "✗ Not found")"
+if [ -d ~/.vim/plugged ] && [ "$(ls -A ~/.vim/plugged 2>/dev/null)" ]; then
+    echo "- Plugins: ✓ $(ls -1 ~/.vim/plugged | wc -l) plugins installed"
+    echo "  Installed plugins: $(ls ~/.vim/plugged | tr '\n' ', ' | sed 's/,$//')"
 else
-    echo -e "${RED}Failed to create installation log${NC}"
+    echo "- Plugins: ✗ No plugins found"
 fi
+echo ""
+echo -e "${GREEN}Installation completed successfully!${NC}"
+echo -e "${GREEN}=================================${NC}"
