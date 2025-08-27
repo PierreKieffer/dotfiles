@@ -63,3 +63,26 @@ fi
 echo -e "${GREEN}Vim configuration installed successfully!${NC}"
 echo -e "${YELLOW}Optional: Add template files to ~/.vim/templates/${NC}"
 echo -e "${YELLOW}Dependencies: Python (for JSON formatting), Git (for fugitive)${NC}"
+
+# Create installation log
+echo -e "${YELLOW}Creating installation log...${NC}"
+{
+    echo "================================="
+    echo "VIM CONFIGURATION INSTALL LOG"
+    echo "================================="
+    echo "Date: $(date)"
+    echo "User: $(whoami)"
+    echo "System: $(uname -a)"
+    echo ""
+    echo "Installation Details:"
+    echo "- vim-plug: $([ -f ~/.vim/autoload/plug.vim ] && echo "✓ Installed" || echo "✗ Not found")"
+    echo "- vimrc: $([ -f ~/.vimrc ] && echo "✓ Installed" || echo "✗ Not found")"
+    echo "- Templates dir: $([ -d ~/.vim/templates ] && echo "✓ Created" || echo "✗ Not found")"
+    echo ""
+    echo "Plugin Status:"
+    vim -E -s -u ~/.vimrc -c 'PlugStatus' -c 'qall!' 2>&1 | grep -E "✓|✗|Error|Failed" || echo "Unable to get plugin status"
+    echo ""
+    echo "Installation completed at: $(date)"
+} > ~/.vim/install.log
+
+echo -e "${GREEN}Installation log saved to ~/.vim/install.log${NC}"
