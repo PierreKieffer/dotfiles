@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Check if an argument is provided
+if [ -z "$1" ]; then
+  echo "Error: You must provide a file path."
+  echo "Usage: ./copy-content /path/to/file"
+  exit 1
+fi
+
+# Check if the file exists
+if [ ! -f "$1" ]; then
+  echo "Error: The file '$1' does not exist."
+  exit 1
+fi
+
+# Copy the content of the file to the clipboard
+cat "$1" | pbcopy
+
+# Confirm that the operation was successful
+echo "The content of the file '$1' has been copied to the clipboard."
+
+

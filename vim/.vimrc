@@ -35,6 +35,7 @@ nnoremap <leader>qa :qa!<cr>
 
 " utils 
 nnoremap <leader>b :bn<cr>
+" nnoremap <leader>l :ls<cr>
 nnoremap <leader>c :wincmd c<cr>
 nnoremap <leader>n :set number!<cr>
 nnoremap <leader>N :call Notes()<cr>
@@ -63,11 +64,16 @@ nnoremap <C-j> 20j
 nnoremap <C-k> 20k
 vnoremap e g_
 vnoremap f ^
-vnoremap <leader>c "+y
 nnoremap L e
 nnoremap H b
 
 nnoremap :t :NERDTreeToggle<cr>
+
+nnoremap <F7> :%!python -mjson.tool<cr>
+
+" insert new line out of insert mode 
+" nnoremap m o<ESC>k
+"
 
 " map esc key 
 imap kj <ESC>l
@@ -98,7 +104,6 @@ vnoremap p "_dP
 " - pluggins -
 " -----------------------------------------
 call plug#begin('~/.vim/plugged')
-Plug 'dense-analysis/ale'
 Plug 'tpope/vim-commentary'
 Plug 'mzlogin/vim-markdown-toc'
 Plug 'itchyny/lightline.vim'
@@ -109,8 +114,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-surround'
 Plug 'fatih/vim-go'
+" Plug 'chriskempson/base16-vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'NLKNguyen/papercolor-theme'
+" Plug 'rust-lang/rust.vim'
+" Plug '~/.vim/plugged/flag.vim'
+" Plug 'morhetz/gruvbox'
 call plug#end()
 
 " -----------------------------------------
@@ -140,11 +149,14 @@ let g:multi_cursor_select_all_word_key = '<C-a>'
 let g:multi_cursor_quit_key='<C-k>'
 
 " vim-fugitive
-" nnoremap <leader>gs :G<CR>
-" nnoremap <leader>gc :Git commit<CR>
-" nnoremap <leader>gl :Git log<CR>
-" nnoremap <leader>gk :diffget //3<CR>
-" nnoremap <leader>gj :diffget //2<CR>
+nnoremap <leader>gs :G<CR>
+nnoremap <leader>gc :Git commit<CR>
+nnoremap <leader>gl :Git log<CR>
+nnoremap <leader>gk :diffget //3<CR>
+nnoremap <leader>gj :diffget //2<CR>
+
+" Goyo
+let g:goyo_width = 120
 
 " -----------------------------------------
 " - file init -
@@ -164,12 +176,6 @@ endfunction
 " json
 autocmd BufRead,BufNewFile *.json set cursorline!
 
-
-" -----------------------------------------
-" - utils -
-" -----------------------------------------
-
-"  Json
 function Json()
 	:silent! %s/None/null/g
 	:silent! %s/True/true/g
@@ -180,16 +186,31 @@ endfunction
 
 " Search
 function Search(param_1, param_2)
-    exec 'vimgrep /\<' . a:param_1 . '\>/j **/*.' . a:param_2
-    " exec 'vimgrep /'.a:param_1.'/j **/*.'.a:param_2 
+    exec 'vimgrep /'.a:param_1.'/j **/*.'.a:param_2 
     copen
     wincmd J
     resize 30
 endfunction
 command! -nargs=* Search call Search(<f-args>)
 
-xnoremap <silent> <Leader>g "zy:call Search(@z, expand('%:e'))<CR>
-nnoremap <silent> <Leader>g :set hlsearch<CR>*bN:call Search(expand("<cword>"), expand('%:e'))<CR>
+
+" flask template
+function FlaskTemp()
+   :1,$d
+   :read ~/.vim/templates/flask_template.py
+endfunction
+
+" fastapi template
+function FastAPITemp()
+   :1,$d
+   :read ~/.vim/templates/fastapi_template.py
+endfunction
+
+" fastapi template
+function SocketTemp()
+   :1,$d
+   :read ~/.vim/templates/socket_template.py
+endfunction
 
 " clean 
 function Clear()
@@ -202,6 +223,15 @@ function OpenAllFilesFromDir(dir)
 endfunction
 command! -complete=file_in_path -nargs=+ T call OpenAllFilesFromDir(<f-args>)
 
+
+" -----------------------------------------
+" - utils -
+" -----------------------------------------
+" Mapping to highlight selected lines in yellow
+vnoremap <Leader>h :call HighlightSelectedLines()<CR>
+
+" Mapping to clear all highlights
+nnoremap <Leader>H :call clearmatches()<CR>
 
 " Function to highlight selected lines
 function! HighlightSelectedLines()
@@ -221,41 +251,72 @@ function! HighlightSelectedLines()
     " Restore the cursor position
     call setpos('.', l:cursor_pos)
 endfunction
+"  vimgrep 
+"
+ function! Grep(pattern, location)
+    exec ":vimgrep /" . a:pattern . "/gj " . a:location 
+endfunction
 
-" Mapping to highlight selected lines in yellow
-vnoremap <Leader>h :call HighlightSelectedLines()<CR>
+command! -nargs=+ Grep :call Grep(<f-args>)
 
-" Mapping to clear all highlights
-nnoremap <Leader>H :call clearmatches()<CR>
+augroup myvimrc
+    autocmd!
+    autocmd QuickFixCmdPost [^l]* cwindow
+    autocmd QuickFixCmdPost l*    lwindow
+augroup END
 
 " find and replace all  
 function FindAndReplaceAll(source, target)
     exe silent! '%s/' . a:source . '/' . a:target . '/g'
 endfunction
 
-"Black
-command! Black execute '!black %'
+" notes
+function VimReminder()
+" :silent! mkdir -p /tmp/notes && touch /tmp/notes/notes.md
+" :tabnew /tmp/notes/notes.md
+  :tabnew ~/.vim/templates/reminder.md
+endfunction
+
 
 " -----------------------------------------
 " - theme -
 " -----------------------------------------
 " custom nord
 
- set termguicolors
- set t_Co=256
- set cursorline
- colorscheme nord
- let g:lightline = {'colorscheme': 'nord',}
- set background=dark
+ " set termguicolors
+ " set t_Co=256
+ " set cursorline
+ " colorscheme nord
+ " let g:lightline = {'colorscheme': 'nord',}
+ " set background=dark
+
+" gruvbox
+" set background=light
+" let g:gruvbox_contrast_light = 'hard'
+" colorscheme gruvbox
+" let g:lightline = {'colorscheme': 'gruvbox',}
 
 " " custom PaperColor light
 " set termguicolors
-" set t_Co=256
-"
-" set cursorline
+set t_Co=256
+set cursorline
+set background=light
+colorscheme PaperColor
+let g:lightline = {'colorscheme': 'PaperColor',}
+
+
 " set background=light
-" colorscheme PaperColor
-" let g:lightline = {'colorscheme': 'PaperColor',}
+" colorscheme intellij
+" let g:lightline = {'colorscheme': 'intellij',}
+
+
+" colorscheme base16-tomorrow
+" let g:lightline = {'colorscheme': 'Tomorrow',}
+" set background=dark
 
 " show hi groups : 
 " so $VIMRUNTIME/syntax/hitest.vim
+"
+"
+"
+"grep :vim /pattern/ **/*.go :resize 40 
