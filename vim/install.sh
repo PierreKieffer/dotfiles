@@ -66,6 +66,7 @@ echo -e "${YELLOW}Dependencies: Python (for JSON formatting), Git (for fugitive)
 
 # Create installation log
 echo -e "${YELLOW}Creating installation log...${NC}"
+mkdir -p ~/.vim
 {
     echo "================================="
     echo "VIM CONFIGURATION INSTALL LOG"
@@ -80,9 +81,18 @@ echo -e "${YELLOW}Creating installation log...${NC}"
     echo "- Templates dir: $([ -d ~/.vim/templates ] && echo "✓ Created" || echo "✗ Not found")"
     echo ""
     echo "Plugin Status:"
-    vim -E -s -u ~/.vimrc -c 'PlugStatus' -c 'qall!' 2>&1 | grep -E "✓|✗|Error|Failed" || echo "Unable to get plugin status"
+    if [ -f ~/.vimrc ]; then
+        vim -E -s -u ~/.vimrc -c 'PlugStatus' -c 'qall!' 2>&1 | grep -E "✓|✗|Error|Failed" || echo "Unable to get plugin status"
+    else
+        echo "vimrc not found - cannot check plugin status"
+    fi
     echo ""
     echo "Installation completed at: $(date)"
-} > ~/.vim/install.log
+} > ~/.vim/install.log 2>&1
 
-echo -e "${GREEN}Installation log saved to ~/.vim/install.log${NC}"
+if [ -f ~/.vim/install.log ]; then
+    echo -e "${GREEN}Installation log saved to ~/.vim/install.log${NC}"
+    echo -e "${YELLOW}View log with: cat ~/.vim/install.log${NC}"
+else
+    echo -e "${RED}Failed to create installation log${NC}"
+fi
