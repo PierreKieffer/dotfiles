@@ -2,6 +2,8 @@
 
 # Vim Configuration Installer
 # Installs vim-plug and sets up the vim configuration
+#
+# Usage: curl -fsSL https://raw.githubusercontent.com/PierreKieffer/dotfiles/master/vim/install.sh | bash
 
 set -e
 
@@ -32,7 +34,7 @@ fi
 echo -e "${YELLOW}Installing vimrc...${NC}"
 # Download and install vimrc
 curl -fLo ~/.vimrc \
-    https://raw.githubusercontent.com/USERNAME/REPO/master/vimrc
+    https://raw.githubusercontent.com/PierreKieffer/dotfiles/master/vim/vimrc
 echo -e "${GREEN}vimrc installed${NC}"
 
 echo -e "${YELLOW}Creating template directory...${NC}"
