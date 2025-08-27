@@ -44,7 +44,7 @@ echo -e "${GREEN}Templates directory created${NC}"
 
 echo -e "${YELLOW}Installing vim plugins...${NC}"
 # Install plugins
-vim +PlugInstall --sync +qa
+vim +'PlugInstall --sync' +qa
 echo -e "${GREEN}Plugins installed${NC}"
 
 echo -e "${GREEN}Vim configuration installed successfully!${NC}"
