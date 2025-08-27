@@ -50,9 +50,4 @@ echo -e "${GREEN}Templates directory created${NC}"
 
 echo -e "${YELLOW}Installing vim plugins...${NC}"
 # Install plugins (suppress terminal warning and color scheme errors)
-vim -E -s -u ~/.vimrc +PlugInstall +qall >/dev/null 2>&1 || {
-    echo -e "${YELLOW}Warning: Some plugins may have failed to install${NC}"
-}
-echo -e "${GREEN}Plugins installation completed${NC}"
-
-echo -e "${GREEN}Vim configuration installed successfully!${NC}"
+vim +'PlugInstall --sync' +qa
