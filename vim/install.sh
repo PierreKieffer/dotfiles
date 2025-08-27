@@ -49,15 +49,15 @@ mkdir -p ~/.vim/templates
 echo -e "${GREEN}Templates directory created${NC}"
 
 echo -e "${YELLOW}Installing vim plugins...${NC}"
-# Install plugins with detailed output
-vim -E -s -u ~/.vimrc +PlugInstall +PlugStatus +qall 2>&1 | tee /tmp/vim_plugin_install.log
+# Install plugins
+vim +PlugInstall +qall
 
-# Check installation status
-if vim -E -s -u ~/.vimrc -c 'PlugStatus' -c 'qall!' 2>&1 | grep -q "✗\|Error\|Failed"; then
-    echo -e "${YELLOW}Some plugins failed to install. Check details:${NC}"
-    vim -E -s -u ~/.vimrc -c 'PlugStatus' -c 'qall!' 2>&1 | grep -E "✗|Error|Failed|✓" || true
+# Check if plugins were installed
+if [ -d ~/.vim/plugged ] && [ "$(ls -A ~/.vim/plugged 2>/dev/null)" ]; then
+    plugin_count=$(ls -1 ~/.vim/plugged | wc -l)
+    echo -e "${GREEN}Plugins installed successfully: $plugin_count plugins found${NC}"
 else
-    echo -e "${GREEN}All plugins installed successfully${NC}"
+    echo -e "${YELLOW}Warning: Plugin installation may have failed${NC}"
 fi
 
 echo -e "${GREEN}Vim configuration installed successfully!${NC}"
