@@ -21,6 +21,12 @@ if ! command -v vim &> /dev/null; then
     exit 1
 fi
 
+# Check if git is installed
+if ! command -v git &> /dev/null; then
+    echo -e "${RED}Error: Git is not installed. vim-plug requires git to download plugins.${NC}"
+    exit 1
+fi
+
 echo -e "${YELLOW}Installing vim-plug...${NC}"
 # Install vim-plug if not already installed
 if [ ! -f ~/.vim/autoload/plug.vim ]; then
@@ -43,9 +49,11 @@ mkdir -p ~/.vim/templates
 echo -e "${GREEN}Templates directory created${NC}"
 
 echo -e "${YELLOW}Installing vim plugins...${NC}"
-# Install plugins
-vim +PlugInstall +qall
-echo -e "${GREEN}Plugins installed${NC}"
+# Install plugins (suppress terminal warning and color scheme errors)
+vim -E -s -u ~/.vimrc +PlugInstall +qall >/dev/null 2>&1 || {
+    echo -e "${YELLOW}Warning: Some plugins may have failed to install${NC}"
+}
+echo -e "${GREEN}Plugins installation completed${NC}"
 
 echo -e "${GREEN}Vim configuration installed successfully!${NC}"
 echo -e "${YELLOW}Optional: Add template files to ~/.vim/templates/${NC}"

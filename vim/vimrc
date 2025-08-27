@@ -239,7 +239,13 @@ command! Black execute '!black %'
 set termguicolors
 set t_Co=256
 set cursorline
-colorscheme nord
+" Set colorscheme with fallback
+try
+    colorscheme nord
+catch /^Vim\%((\a\+)\)\=:E185/
+    " nord theme not found, use default
+    colorscheme default
+endtry
 set background=dark
 
 " Alternative PaperColor theme (commented)
