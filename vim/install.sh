@@ -52,11 +52,11 @@ set +e  # ne pas interrompre si vim renvoie ≠ 0; on gère après
 
 if [ -t 0 ]; then
     # A: STDIN est un TTY (exécution locale)
-    vim +PlugInstall +PlugStatus "+sleep 2" +qall
+    vim +PlugInstall +PlugStatus "+sleep 1" +qall
     VIM_STATUS=$?
 elif [ -r /dev/tty ]; then
     # B: script via pipe (curl|bash) -> on fournit un TTY à Vim
-    vim +PlugInstall +PlugStatus "+sleep 2" +qall </dev/tty
+    vim +PlugInstall +PlugStatus "+sleep 1" +qall </dev/tty
     VIM_STATUS=$?
 else
     # Pas de TTY dispo : on préfère échouer explicitement
