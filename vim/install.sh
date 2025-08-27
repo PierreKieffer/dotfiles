@@ -49,8 +49,11 @@ mkdir -p ~/.vim/templates
 echo -e "${GREEN}Templates directory created${NC}"
 
 echo -e "${YELLOW}Installing vim plugins...${NC}"
-# Install plugins
-vim +PlugInstall +qall
+# Install plugins (prevent script exit)
+vim +PlugInstall +qall || true
+
+# Wait a moment for installation to complete
+sleep 2
 
 # Check if plugins were installed
 if [ -d ~/.vim/plugged ] && [ "$(ls -A ~/.vim/plugged 2>/dev/null)" ]; then
