@@ -50,7 +50,27 @@ echo -e "${GREEN}Templates directory created${NC}"
 
 echo -e "${YELLOW}Installing vim plugins...${NC}"
 # Install plugins (suppress terminal warning and color scheme errors)
-vim -E -s -u ~/.vimrc +PlugInstall +qall >/dev/null 2>&1 || {
-    echo -e "${YELLOW}Warning: Some plugins may have failed to install${NC}"
-}
-echo -e "${GREEN}Plugins installation completed${NC}"
+vim -E -s -u ~/.vimrc +PlugInstall +qall >/dev/null 2>&1
+
+# Verify plugin installation by checking if expected plugins exist
+expected_plugins="ale vim-commentary vim-markdown-toc lightline.vim nerdtree ctrlp.vim vim-multiple-cursors vim-fugitive vim-markdown vim-surround vim-go nord-vim papercolor-theme"
+installed_count=0
+failed_plugins=""
+
+for plugin in $expected_plugins; do
+    # Check common plugin directory naming patterns
+    if [ -d ~/.vim/plugged/"$plugin" ] || [ -d ~/.vim/plugged/"${plugin#vim-}" ] || [ -d ~/.vim/plugged/"${plugin%.vim}" ]; then
+        installed_count=$((installed_count + 1))
+    else
+        failed_plugins="$failed_plugins $plugin"
+    fi
+done
+
+if [ $installed_count -eq 0 ]; then
+    echo -e "${RED}Error: No plugins were installed${NC}"
+elif [ -n "$failed_plugins" ]; then
+    echo -e "${YELLOW}Warning: Some plugins may have failed to install:$failed_plugins${NC}"
+    echo -e "${GREEN}Successfully installed: $installed_count plugins${NC}"
+else
+    echo -e "${GREEN}All plugins installed successfully: $installed_count plugins${NC}"
+fi
