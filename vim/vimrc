@@ -1,10 +1,10 @@
-" ===========================================
-" VIM CONFIGURATION
-" ===========================================
+" -----------------------------------------
+" |           VIM CONFIGURATION           |
+" -----------------------------------------
 
-" ===========================================
-" BASIC SETTINGS
-" ===========================================
+" -----------------------------------------
+" - std configuration -
+" -----------------------------------------
 syntax on
 set laststatus=2
 set incsearch
@@ -19,118 +19,65 @@ set tabpagemax=100
 set wildmenu
 set wildmode=longest:full,full
 set wildoptions=pum
-set number
 
-" ===========================================
-" PLUGINS
-" ===========================================
-call plug#begin('~/.vim/plugged')
-Plug 'dense-analysis/ale'
-Plug 'tpope/vim-commentary'
-Plug 'mzlogin/vim-markdown-toc'
-Plug 'itchyny/lightline.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'kien/ctrlp.vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-markdown'
-Plug 'tpope/vim-surround'
-Plug 'fatih/vim-go'
-Plug 'arcticicestudio/nord-vim'
-Plug 'NLKNguyen/papercolor-theme'
-call plug#end()
 
-" ===========================================
-" PLUGIN CONFIGURATION
-" ===========================================
-
-" vim-go
-let g:go_template_use_pkg = 1
-let g:go_highlight_functions = 1
-" let g:go_highlight_function_calls = 1
-
-" ctrlp 
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_use_caching = 0
-let g:ctrlp_prompt_mappings = {
-    \ 'PrtHistory(-1)':       ['<c-t>'],
-    \ 'AcceptSelection("t")': ['<c-n>'],
-    \ }
-
-" multiple cursor
-let g:multi_cursor_exit_from_insert_mode = 1
-let g:multi_cursor_exit_from_visual_mode = 1
-let g:multi_cursor_select_all_word_key = '<C-a>'
-let g:multi_cursor_quit_key='<C-k>'
-
-" lightline
-let g:lightline = {'colorscheme': 'nord',}
-
-" ===========================================
-" KEYMAPPINGS
-" ===========================================
-
-" Leader key
+" -----------------------------------------
+" - key mapping -
+" -----------------------------------------
+" leader
 let mapleader = " "
 
-" Save & quit mappings
+" save & quit 
 nnoremap :s :update<cr>
 nnoremap :q :q<cr>
 nnoremap <leader>qq :q!<cr>
 nnoremap <leader>qa :qa!<cr>
 
-" Navigation mappings
+" utils 
 nnoremap <leader>b :bn<cr>
-nnoremap <leader>w :wincmd w<cr>
-nnoremap <leader>t :tabnew<cr>
-nnoremap tg gT
-nnoremap <C-l> gt
-nnoremap <C-h> gT
-nnoremap <C-j> 20j
-nnoremap <C-k> 20k
-nnoremap L e
-nnoremap H b
-nnoremap F ^
-nnoremap E $
-
-" Window & split mappings
 nnoremap <leader>c :wincmd c<cr>
-nnoremap <leader>h :sp<cr>
-nnoremap <leader>v :vsp<cr>
-
-" Utility mappings
 nnoremap <leader>n :set number!<cr>
 nnoremap <leader>N :call Notes()<cr>
+nnoremap <leader>h :sp<cr>
+nnoremap <leader>v :vsp<cr>
+nnoremap <leader>w :wincmd w<cr>
+nnoremap <leader>t :tabnew<cr>
 nnoremap <leader>s :set hlsearch<cr> *bN
 nnoremap <leader>S :set hlsearch!<cr>  
 nnoremap <leader>f :<C-f>k
+nnoremap tg gT
+nnoremap <C-l> gt
+nnoremap <C-h> gT
 nnoremap ù %
 vnoremap ù %
-
-" Recording & macro mappings
 nnoremap <leader>r qr
 nnoremap <leader>R q
 nnoremap <leader>à @r
 vnoremap <leader>à :normal @r<cr>
-map q <Nop>
-
-" Text object mappings
 nnoremap "" yi"
 nnoremap (( yi(
 nnoremap ye vg_y$
-
-" Visual mode mappings
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+nnoremap <C-j> 20j
+nnoremap <C-k> 20k
 vnoremap e g_
 vnoremap f ^
 vnoremap <leader>c "+y
-vnoremap p "_dP
+nnoremap L e
+nnoremap H b
 
-" Insert mode mappings
+nnoremap :t :NERDTreeToggle<cr>
+
+" map esc key 
 imap kj <ESC>l
 
-" Auto closing brackets 
+" go to the first non-blank character in a line
+nnoremap F ^
+" go to the last non-blank character in a line
+nnoremap E $
+
+" auto closing brackets 
 inoremap " ""<left>
 inoremap ' ''<left>
 inoremap ` ``<left>
@@ -142,48 +89,95 @@ inoremap {<CR> {<CR>}<ESC>O
 inoremap {;<CR> {<CR>};<ESC>O
 inoremap /*<CR> /*<CR>*/<ESC>O
 
-" Plugin-specific mappings
-nnoremap :t :NERDTreeToggle<cr>
-nnoremap <silent> <C-b> :CtrlPBuffer<CR>
-xnoremap <silent> <Leader>g "zy:call Search(@z, expand('%:e'))<CR>
-nnoremap <silent> <Leader>g :set hlsearch<CR>*bN:call Search(expand("<cword>"), expand('%:e'))<CR>
-vnoremap <Leader>h :call HighlightSelectedLines()<CR>
-nnoremap <Leader>H :call clearmatches()<CR>
+" disable recording
+map q <Nop>
 
-" Commented vim-fugitive mappings
+vnoremap p "_dP
+
+" -----------------------------------------
+" - pluggins -
+" -----------------------------------------
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'dense-analysis/ale'
+Plug 'tpope/vim-commentary'
+Plug 'mzlogin/vim-markdown-toc'
+Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/nerdtree'
+" Plug 'kien/ctrlp.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-surround'
+Plug 'fatih/vim-go'
+Plug 'arcticicestudio/nord-vim'
+Plug 'NLKNguyen/papercolor-theme'
+call plug#end()
+
+" -----------------------------------------
+" - special settings -
+" -----------------------------------------
+" set line numbers 
+set number
+
+" vim-go
+let g:go_template_use_pkg = 1
+let g:go_highlight_functions = 1
+" let g:go_highlight_function_calls = 1
+
+" ctrlp 
+" let g:ctrlp_working_path_mode = 0
+" let g:ctrlp_use_caching = 0
+" nnoremap <silent> <C-b> :CtrlPBuffer<CR>
+" let g:ctrlp_prompt_mappings = {
+"     \ 'PrtHistory(-1)':       ['<c-t>'],
+"     \ 'AcceptSelection("t")': ['<c-n>'],
+"     \ }
+
+" fzf
+nnoremap <C-p> :Files<CR>
+nnoremap <C-b> :Buffers<CR>
+let $FZF_DEFAULT_OPTS = '--bind ctrl-u:preview-up,ctrl-d:preview-down'
+let $FZF_DEFAULT_COMMAND = 'find . -type f -not -path "*/.*"'
+
+" multiple cursor
+let g:multi_cursor_exit_from_insert_mode = 1
+let g:multi_cursor_exit_from_visual_mode = 1
+let g:multi_cursor_select_all_word_key = '<C-a>'
+let g:multi_cursor_quit_key='<C-k>'
+
+" vim-fugitive
 " nnoremap <leader>gs :G<CR>
 " nnoremap <leader>gc :Git commit<CR>
 " nnoremap <leader>gl :Git log<CR>
 " nnoremap <leader>gk :diffget //3<CR>
 " nnoremap <leader>gj :diffget //2<CR>
 
-" ===========================================
-" AUTOCMDS & FILE TYPES
-" ===========================================
-
-" Bash files
+" -----------------------------------------
+" - file init -
+" -----------------------------------------
+" bash
 autocmd BufNewFile *.sh 0r ~/.vim/templates/template.sh | :2
-
-" Python files
-autocmd BufNewFile *.py 0r ~/.vim/templates/template.py | :2
-
-" JSON files
-autocmd BufRead,BufNewFile *.json set cursorline!
-
-" ===========================================
-" CUSTOM FUNCTIONS
-" ===========================================
-
-" Template functions
 function BashTemp()
    :read ~/.vim/templates/template.sh
 endfunction
 
+" python
+autocmd BufNewFile *.py 0r ~/.vim/templates/template.py | :2
 function PyTemp()
    :read ~/.vim/templates/template.py
 endfunction
 
-" JSON formatting
+" json
+autocmd BufRead,BufNewFile *.json set cursorline!
+
+
+" -----------------------------------------
+" - utils -
+" -----------------------------------------
+
+"  Json
 function Json()
 	:silent! %s/None/null/g
 	:silent! %s/True/true/g
@@ -192,7 +186,7 @@ function Json()
 	:silent! %!python -mjson.tool
 endfunction
 
-" Search function
+" Search
 function Search(param_1, param_2)
     exec 'vimgrep /\<' . a:param_1 . '\>/j **/*.' . a:param_2
     " exec 'vimgrep /'.a:param_1.'/j **/*.'.a:param_2 
@@ -202,58 +196,74 @@ function Search(param_1, param_2)
 endfunction
 command! -nargs=* Search call Search(<f-args>)
 
-" Utility functions
+xnoremap <silent> <Leader>g "zy:call Search(@z, expand('%:e'))<CR>
+nnoremap <silent> <Leader>g :set hlsearch<CR>*bN:call Search(expand("<cword>"), expand('%:e'))<CR>
+
+" clean 
 function Clear()
    :1,$d
 endfunction
 
+" open all target files 
 function OpenAllFilesFromDir(dir)
     exec 'argadd '.a:dir.'/* | tab all'
 endfunction
 command! -complete=file_in_path -nargs=+ T call OpenAllFilesFromDir(<f-args>)
 
-" Highlighting function
+
+" Function to highlight selected lines
 function! HighlightSelectedLines()
+    " Save the current cursor position
     let l:cursor_pos = getpos(".")
+    
+    " Get the visual selection range
     let l:start_line = line("'<")
     let l:end_line = line("'>")
     
+    " Highlight the selected lines with yellow background
     for l:line_number in range(l:start_line, l:end_line)
+        " call matchadd('VisualCustom', '\%'.l:line_number.'l')
         call matchadd('Visual', '\%'.l:line_number.'l')
     endfor
     
+    " Restore the cursor position
     call setpos('.', l:cursor_pos)
 endfunction
 
-" Find and replace function
+" Mapping to highlight selected lines in yellow
+vnoremap <Leader>h :call HighlightSelectedLines()<CR>
+
+" Mapping to clear all highlights
+nnoremap <Leader>H :call clearmatches()<CR>
+
+" find and replace all  
 function FindAndReplaceAll(source, target)
     exe silent! '%s/' . a:source . '/' . a:target . '/g'
 endfunction
 
-" Black formatter
+"Black
 command! Black execute '!black %'
 
-" ===========================================
-" THEME & UI
-" ===========================================
-set termguicolors
-set t_Co=256
-set cursorline
-" Set colorscheme with fallback
-try
-    colorscheme nord
-catch /^Vim\%((\a\+)\)\=:E185/
-    " nord theme not found, use default
-    colorscheme default
-endtry
-set background=dark
+" -----------------------------------------
+" - theme -
+" -----------------------------------------
+" custom nord
 
-" Alternative PaperColor theme (commented)
+ set termguicolors
+ set t_Co=256
+ set cursorline
+ colorscheme nord
+ let g:lightline = {'colorscheme': 'nord',}
+ set background=dark
+
+" " custom PaperColor light
 " set termguicolors
 " set t_Co=256
+"
 " set cursorline
 " set background=light
 " colorscheme PaperColor
 " let g:lightline = {'colorscheme': 'PaperColor',}
 
-" Debug syntax highlighting: so $VIMRUNTIME/syntax/hitest.vim
+" show hi groups : 
+" so $VIMRUNTIME/syntax/hitest.vim
